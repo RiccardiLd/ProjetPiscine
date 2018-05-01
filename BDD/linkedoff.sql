@@ -53,6 +53,7 @@ DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE `contacts` (
   `username_user1` VARCHAR(12) NULL DEFAULT NULL,
   `username_user2` VARCHAR(12) NULL DEFAULT NULL,
+  `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'friend/professional',
   `connected` TINYINT NULL DEFAULT 0 COMMENT 'decides if two people are connected to each other, seeing th',
   `timestamp` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`username_user1`, `username_user2`)
@@ -235,8 +236,8 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
 -- ('','','','','','','','');
 -- INSERT INTO `posts` (`post_id`,`username`,`privacy`,`type`,`text`,`content`,`timestamp`,`id_shared_post`) VALUES
 -- ('','','','','','','','');
--- INSERT INTO `contacts` (`username_user1`,`username_user2`,`connected`,`timestamp`) VALUES
--- ('','','','');
+-- INSERT INTO `contacts` (`username_user1`,`username_user2`,`type`,`connected`,`timestamp`) VALUES
+-- ('','','','','');
 -- INSERT INTO `comments` (`comment_id`,`post_id`,`username_user`,`content`,`timestamp`) VALUES
 -- ('','','','','');
 -- INSERT INTO `likes` (`username_user`,`post_id`,`timestamp`) VALUES

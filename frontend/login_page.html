@@ -2,20 +2,28 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LinkedOff: Log In or Sign Up</title>
         <link href="login.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-
-        <h2>Login</h2>
-
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+        <div class="header">
+            <div class="wrapper">
+                <h1>
+                    <a href="login_page.html">
+                        <img class="logo" src="img/linkedoff_logo.png" alt="LinkedOff Logo" />
+                    </a>
+                </h1>
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Se connecter</button>
+            </div>
+        </div>
+        <h2>Bienvenue</h2>
 
         <div id="id01" class="modal">
 
             <form class="modal-content animate" action="/action_page.php">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                    <img src="img/avatar.png" alt="Avatar" class="avatar">
                 </div>
 
                 <div class="container">

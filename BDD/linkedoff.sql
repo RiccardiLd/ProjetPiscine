@@ -11,17 +11,18 @@
 -- ---
 
 DROP TABLE IF EXISTS `users`;
-		
+
 CREATE TABLE `users` (
-  `username` VARCHAR(12) NULL DEFAULT NULL,
-  `email` VARCHAR(40) NULL DEFAULT NULL,
-  `password` VARCHAR(40) NULL DEFAULT NULL,
-  `first_name` VARCHAR(12) NULL DEFAULT NULL,
-  `last_name` VARCHAR(12) NULL DEFAULT NULL,
-  `profile_photo` VARCHAR(255) NULL DEFAULT NULL COMMENT 'Link to the profile photo',
-  `summary` MEDIUMTEXT NULL DEFAULT NULL,
-  `status` VARCHAR(20) NULL DEFAULT NULL COMMENT 'Normal user, enterprise, admin',
-  PRIMARY KEY (`username`)
+    `username` VARCHAR(12),
+    `email` VARCHAR(40) NOT NULL,
+    `password` VARCHAR(40) NOT NULL,
+    `first_name` VARCHAR(12) NOT NULL,
+    `last_name` VARCHAR(12) NOT NULL,
+    `profile_photo` VARCHAR(255) NULL DEFAULT NULL COMMENT 'Link to the profile photo',
+    `summary` MEDIUMTEXT NULL DEFAULT NULL,
+    `status` VARCHAR(20) NULL DEFAULT NULL COMMENT 'Normal user, enterprise, admin',
+    `graduation` YEAR NULL DEFAULT NULL,
+    PRIMARY KEY (`username`)
 );
 
 -- ---
@@ -30,17 +31,17 @@ CREATE TABLE `users` (
 -- ---
 
 DROP TABLE IF EXISTS `posts`;
-		
+
 CREATE TABLE `posts` (
-  `post_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `username` VARCHAR(12) NULL DEFAULT NULL,
-  `privacy` VARCHAR(20) NULL DEFAULT NULL,
-  `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'type of post',
-  `text` MEDIUMTEXT NULL DEFAULT NULL,
-  `content` VARCHAR(40) NULL DEFAULT NULL COMMENT 'Articles, sites',
-  `timestamp` TIMESTAMP NULL DEFAULT NULL,
-  `id_shared_post` INTEGER NULL DEFAULT NULL,
-  PRIMARY KEY (`post_id`)
+    `post_id` INTEGER AUTO_INCREMENT,
+    `username` VARCHAR(12) NULL DEFAULT NULL,
+    `privacy` VARCHAR(20) NULL DEFAULT NULL,
+    `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'type of post',
+    `text` MEDIUMTEXT NULL DEFAULT NULL,
+    `content` VARCHAR(40) NULL DEFAULT NULL COMMENT 'Articles, sites',
+    `timestamp` TIMESTAMP NULL DEFAULT NULL,
+    `id_shared_post` INTEGER NULL DEFAULT NULL,
+    PRIMARY KEY (`post_id`)
 );
 
 -- ---
@@ -49,14 +50,14 @@ CREATE TABLE `posts` (
 -- ---
 
 DROP TABLE IF EXISTS `contacts`;
-		
+
 CREATE TABLE `contacts` (
-  `username_user1` VARCHAR(12) NULL DEFAULT NULL,
-  `username_user2` VARCHAR(12) NULL DEFAULT NULL,
-  `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'friend/professional',
-  `connected` TINYINT NULL DEFAULT 0 COMMENT 'decides if two people are connected to each other, seeing th',
-  `timestamp` TIMESTAMP NULL DEFAULT NULL,
-  PRIMARY KEY (`username_user1`, `username_user2`)
+    `username_user1` VARCHAR(12),
+    `username_user2` VARCHAR(12),
+    `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'friend/professional',
+    `connected` TINYINT NULL DEFAULT 0 COMMENT 'decides if two people are connected to each other',
+    `timestamp` TIMESTAMP NULL DEFAULT NULL,
+    PRIMARY KEY (`username_user1`, `username_user2`)
 );
 
 -- ---
@@ -65,14 +66,14 @@ CREATE TABLE `contacts` (
 -- ---
 
 DROP TABLE IF EXISTS `comments`;
-		
+
 CREATE TABLE `comments` (
-  `comment_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `post_id` INTEGER NULL DEFAULT NULL,
-  `username_user` VARCHAR(12) NULL DEFAULT NULL,
-  `content` MEDIUMTEXT NULL DEFAULT NULL,
-  `timestamp` TIMESTAMP NULL DEFAULT NULL,
-  PRIMARY KEY (`comment_id`, `post_id`)
+    `comment_id` INTEGER AUTO_INCREMENT,
+    `post_id` INTEGER,
+    `username_user` VARCHAR(12),
+    `content` MEDIUMTEXT NULL DEFAULT NULL,
+    `timestamp` TIMESTAMP NULL DEFAULT NULL,
+    PRIMARY KEY (`comment_id`, `post_id`)
 );
 
 -- ---
@@ -81,12 +82,12 @@ CREATE TABLE `comments` (
 -- ---
 
 DROP TABLE IF EXISTS `likes`;
-		
+
 CREATE TABLE `likes` (
-  `username_user` VARCHAR(12) NULL DEFAULT NULL,
-  `post_id` INTEGER NULL DEFAULT NULL,
-  `timestamp` TIMESTAMP NULL DEFAULT NULL,
-  PRIMARY KEY (`post_id`, `username_user`)
+    `username_user` VARCHAR(12),
+    `post_id` INTEGER,
+    `timestamp` TIMESTAMP NULL DEFAULT NULL,
+    PRIMARY KEY (`post_id`, `username_user`)
 );
 
 -- ---
@@ -95,11 +96,11 @@ CREATE TABLE `likes` (
 -- ---
 
 DROP TABLE IF EXISTS `conversations`;
-		
+
 CREATE TABLE `conversations` (
-  `conv_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `title` VARCHAR(40) NULL DEFAULT NULL,
-  PRIMARY KEY (`conv_id`)
+    `conv_id` INTEGER AUTO_INCREMENT,
+    `title` VARCHAR(40) NULL DEFAULT NULL,
+    PRIMARY KEY (`conv_id`)
 );
 
 -- ---
@@ -108,11 +109,11 @@ CREATE TABLE `conversations` (
 -- ---
 
 DROP TABLE IF EXISTS `member`;
-		
+
 CREATE TABLE `member` (
-  `conv_id` INTEGER NULL DEFAULT NULL,
-  `username` VARCHAR(12) NULL DEFAULT NULL,
-  PRIMARY KEY (`username`, `conv_id`)
+    `conv_id` INTEGER,
+    `username` VARCHAR(12),
+    PRIMARY KEY (`username`, `conv_id`)
 );
 
 -- ---
@@ -121,14 +122,14 @@ CREATE TABLE `member` (
 -- ---
 
 DROP TABLE IF EXISTS `messages`;
-		
+
 CREATE TABLE `messages` (
-  `message_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `conv_id` INTEGER NULL DEFAULT NULL,
-  `username` VARCHAR(12) NULL DEFAULT NULL,
-  `content` MEDIUMTEXT NULL DEFAULT NULL,
-  `timestamp` TIMESTAMP NULL DEFAULT NULL,
-  PRIMARY KEY (`message_id`)
+    `message_id` INTEGER AUTO_INCREMENT,
+    `conv_id` INTEGER,
+    `username` VARCHAR(12),
+    `content` MEDIUMTEXT NULL DEFAULT NULL,
+    `timestamp` TIMESTAMP NULL DEFAULT NULL,
+    PRIMARY KEY (`message_id`)
 );
 
 -- ---
@@ -137,13 +138,13 @@ CREATE TABLE `messages` (
 -- ---
 
 DROP TABLE IF EXISTS `skills`;
-		
+
 CREATE TABLE `skills` (
-  `skill_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `username` VARCHAR(12) NULL DEFAULT NULL,
-  `skill` VARCHAR(40) NULL DEFAULT NULL,
-  `skill_level` VARCHAR(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`skill_id`)
+    `skill_id` INTEGER AUTO_INCREMENT,
+    `username` VARCHAR(12),
+    `skill` VARCHAR(40) NULL DEFAULT NULL,
+    `skill_level` VARCHAR(20) NULL DEFAULT NULL,
+    PRIMARY KEY (`skill_id`)
 );
 
 -- ---
@@ -152,15 +153,15 @@ CREATE TABLE `skills` (
 -- ---
 
 DROP TABLE IF EXISTS `notifications`;
-		
+
 CREATE TABLE `notifications` (
-  `notif_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `parent_id` INTEGER NULL DEFAULT NULL COMMENT 'id of parent (msg, comment, like)',
-  `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'Type of notification (msg, comment, like, etc)',
-  `seen` TINYINT NULL DEFAULT 0,
-  `user_create` VARCHAR(12) NULL DEFAULT NULL,
-  `user_receive` VARCHAR(12) NULL DEFAULT NULL,
-  PRIMARY KEY (`notif_id`)
+    `notif_id` INTEGER AUTO_INCREMENT,
+    `parent_id` INTEGER NULL DEFAULT NULL COMMENT 'id of parent (msg, comment, like)',
+    `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'Type of notification (msg, comment, like, etc)',
+    `seen` TINYINT NULL DEFAULT 0,
+    `user_create` VARCHAR(12),
+    `user_receive` VARCHAR(12),
+    PRIMARY KEY (`notif_id`)
 );
 
 -- ---
@@ -169,11 +170,11 @@ CREATE TABLE `notifications` (
 -- ---
 
 DROP TABLE IF EXISTS `group_member`;
-		
+
 CREATE TABLE `group_member` (
-  `group_id` INTEGER NULL DEFAULT NULL,
-  `username` VARCHAR(12) NULL DEFAULT NULL,
-  PRIMARY KEY (`username`, `group_id`)
+    `group_id` INTEGER,
+    `username` VARCHAR(12),
+    PRIMARY KEY (`username`, `group_id`)
 );
 
 -- ---
@@ -182,11 +183,11 @@ CREATE TABLE `group_member` (
 -- ---
 
 DROP TABLE IF EXISTS `group`;
-		
+
 CREATE TABLE `group` (
-  `group_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `title` VARCHAR(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`group_id`)
+    `group_id` INTEGER AUTO_INCREMENT,
+    `title` VARCHAR(20) NULL DEFAULT NULL,
+    PRIMARY KEY (`group_id`)
 );
 
 -- ---

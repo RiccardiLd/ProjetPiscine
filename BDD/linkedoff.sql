@@ -193,23 +193,23 @@ CREATE TABLE `group` (
 -- Foreign Keys 
 -- ---
 
-ALTER TABLE `posts` ADD FOREIGN KEY (username) REFERENCES `users` (`username`);
-ALTER TABLE `posts` ADD FOREIGN KEY (id_shared_post) REFERENCES `posts` (`post_id`);
-ALTER TABLE `contacts` ADD FOREIGN KEY (username_user1) REFERENCES `users` (`username`);
-ALTER TABLE `contacts` ADD FOREIGN KEY (username_user2) REFERENCES `users` (`username`);
-ALTER TABLE `comments` ADD FOREIGN KEY (post_id) REFERENCES `posts` (`post_id`);
-ALTER TABLE `comments` ADD FOREIGN KEY (username_user) REFERENCES `users` (`username`);
-ALTER TABLE `likes` ADD FOREIGN KEY (username_user) REFERENCES `users` (`username`);
-ALTER TABLE `likes` ADD FOREIGN KEY (post_id) REFERENCES `posts` (`post_id`);
-ALTER TABLE `member` ADD FOREIGN KEY (conv_id) REFERENCES `conversations` (`conv_id`);
-ALTER TABLE `member` ADD FOREIGN KEY (username) REFERENCES `users` (`username`);
-ALTER TABLE `messages` ADD FOREIGN KEY (conv_id) REFERENCES `conversations` (`conv_id`);
-ALTER TABLE `messages` ADD FOREIGN KEY (username) REFERENCES `users` (`username`);
-ALTER TABLE `skills` ADD FOREIGN KEY (username) REFERENCES `users` (`username`);
-ALTER TABLE `notifications` ADD FOREIGN KEY (user_create) REFERENCES `users` (`username`);
-ALTER TABLE `notifications` ADD FOREIGN KEY (user_receive) REFERENCES `users` (`username`);
-ALTER TABLE `group_member` ADD FOREIGN KEY (group_id) REFERENCES `group` (`group_id`);
-ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`username`);
+ALTER TABLE `posts` ADD FOREIGN KEY (username) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `posts` ADD FOREIGN KEY (id_shared_post) REFERENCES `posts` (`post_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `contacts` ADD FOREIGN KEY (username_user1) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `contacts` ADD FOREIGN KEY (username_user2) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `comments` ADD FOREIGN KEY (post_id) REFERENCES `posts` (`post_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `comments` ADD FOREIGN KEY (username_user) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `likes` ADD FOREIGN KEY (username_user) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `likes` ADD FOREIGN KEY (post_id) REFERENCES `posts` (`post_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `member` ADD FOREIGN KEY (conv_id) REFERENCES `conversations` (`conv_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `member` ADD FOREIGN KEY (username) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `messages` ADD FOREIGN KEY (conv_id) REFERENCES `conversations` (`conv_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `messages` ADD FOREIGN KEY (username) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `skills` ADD FOREIGN KEY (username) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `notifications` ADD FOREIGN KEY (user_create) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `notifications` ADD FOREIGN KEY (user_receive) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `group_member` ADD FOREIGN KEY (group_id) REFERENCES `group` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- ---
 -- Table Properties

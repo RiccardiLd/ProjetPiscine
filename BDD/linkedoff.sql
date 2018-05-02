@@ -33,7 +33,7 @@ CREATE TABLE `users` (
 DROP TABLE IF EXISTS `posts`;
 
 CREATE TABLE `posts` (
-    `post_id` INTEGER AUTO_INCREMENT,
+    `post_id` INTEGER NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(12) NULL DEFAULT NULL,
     `privacy` VARCHAR(20) NULL DEFAULT NULL,
     `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'type of post',
@@ -68,7 +68,7 @@ CREATE TABLE `contacts` (
 DROP TABLE IF EXISTS `comments`;
 
 CREATE TABLE `comments` (
-    `comment_id` INTEGER AUTO_INCREMENT,
+    `comment_id` INTEGER NOT NULL AUTO_INCREMENT,
     `post_id` INTEGER,
     `username_user` VARCHAR(12),
     `content` MEDIUMTEXT NULL DEFAULT NULL,
@@ -98,7 +98,7 @@ CREATE TABLE `likes` (
 DROP TABLE IF EXISTS `conversations`;
 
 CREATE TABLE `conversations` (
-    `conv_id` INTEGER AUTO_INCREMENT,
+    `conv_id` INTEGER NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(40) NULL DEFAULT NULL,
     PRIMARY KEY (`conv_id`)
 );
@@ -124,7 +124,7 @@ CREATE TABLE `member` (
 DROP TABLE IF EXISTS `messages`;
 
 CREATE TABLE `messages` (
-    `message_id` INTEGER AUTO_INCREMENT,
+    `message_id` INTEGER NOT NULL AUTO_INCREMENT,
     `conv_id` INTEGER,
     `username` VARCHAR(12),
     `content` MEDIUMTEXT NULL DEFAULT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE `messages` (
 DROP TABLE IF EXISTS `skills`;
 
 CREATE TABLE `skills` (
-    `skill_id` INTEGER AUTO_INCREMENT,
+    `skill_id` INTEGER NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(12),
     `skill` VARCHAR(40) NULL DEFAULT NULL,
     `skill_level` VARCHAR(20) NULL DEFAULT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE `skills` (
 DROP TABLE IF EXISTS `notifications`;
 
 CREATE TABLE `notifications` (
-    `notif_id` INTEGER AUTO_INCREMENT,
+    `notif_id` INTEGER NOT NULL AUTO_INCREMENT,
     `parent_id` INTEGER NULL DEFAULT NULL COMMENT 'id of parent (msg, comment, like)',
     `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'Type of notification (msg, comment, like, etc)',
     `seen` TINYINT NULL DEFAULT 0,
@@ -185,7 +185,7 @@ CREATE TABLE `group_member` (
 DROP TABLE IF EXISTS `group`;
 
 CREATE TABLE `group` (
-    `group_id` INTEGER AUTO_INCREMENT,
+    `group_id` INTEGER NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(20) NULL DEFAULT NULL,
     PRIMARY KEY (`group_id`)
 );
@@ -233,27 +233,47 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
 -- Test Data
 -- ---
 
--- INSERT INTO `users` (`username`,`email`,`password`,`first_name`,`last_name`,`profile_photo`,`summary`,`status`) VALUES
--- ('','','','','','','','');
+ INSERT INTO `users` (`username`,`email`,`password`,`first_name`,`last_name`,`profile_photo`,`summary`,`status`) VALUES
+ ('ECE','jpsegado@inseec.com','segalol','Jean-Pierre','Segado','','','admin'),
+ ('RiccardiLd','gianni.riccardi@edu.ece.fr','cykablyat','Gianni','Riccardi','','','admin'),
+ ('JoVieira','theo.minier@edu.ece.fr','cykablyat2','Joel','Vieira','','','admin'),
+ ('Reinim','joel.vieira@edu.ece.fr','cykablyat3','Théo','Minier','','','admin');
+
 -- INSERT INTO `posts` (`post_id`,`username`,`privacy`,`type`,`text`,`content`,`timestamp`,`id_shared_post`) VALUES
 -- ('','','','','','','','');
--- INSERT INTO `contacts` (`username_user1`,`username_user2`,`type`,`connected`,`timestamp`) VALUES
--- ('','','','','');
+
+ INSERT INTO `contacts` (`username_user1`,`username_user2`,`type`,`connected`,`timestamp`) VALUES
+ ('ECE','RiccardiLd','','1','2018-04-20 13:23:44'),
+ ('ECE','JoVieira','','1','2018-04-20 13:24:44'),
+ ('ECE','Reinim','','1','2018-04-20 13:25:44');
+
 -- INSERT INTO `comments` (`comment_id`,`post_id`,`username_user`,`content`,`timestamp`) VALUES
 -- ('','','','','');
+
 -- INSERT INTO `likes` (`username_user`,`post_id`,`timestamp`) VALUES
 -- ('','','');
--- INSERT INTO `conversations` (`conv_id`,`title`) VALUES
--- ('','');
--- INSERT INTO `member` (`conv_id`,`username`) VALUES
--- ('','');
+
+ INSERT INTO `conversations` (`title`) VALUES
+ ('LinkedOff Official');
+
+ INSERT INTO `member` (`conv_id`,`username`) VALUES
+ ('1','RiccardiLd'),
+ ('1','JoVieira'),
+ ('1','Reinim');
+
 -- INSERT INTO `messages` (`message_id`,`conv_id`,`username`,`content`,`timestamp`) VALUES
 -- ('','','','','');
--- INSERT INTO `skills` (`skill_id`,`username`,`skill`,`skill_level`) VALUES
--- ('','','','');
+
+ INSERT INTO `skills` (`username`,`skill`,`skill_level`) VALUES
+ ('Reinim','Procrastiner','Avancé'),
+ ('RiccardiLd','Procrastiner','Avancé'),
+ ('JoVieira','Procrastiner','Avancé');
+
 -- INSERT INTO `notifications` (`notif_id`,`parent_id`,`type`,`seen`,`user_create`,`user_receive`) VALUES
 -- ('','','','','','');
+
 -- INSERT INTO `group_member` (`group_id`,`username`) VALUES
 -- ('','');
+
 -- INSERT INTO `group` (`group_id`,`title`) VALUES
 -- ('','');

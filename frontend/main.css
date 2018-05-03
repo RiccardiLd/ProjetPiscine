@@ -55,7 +55,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .nav-main {
     align-items: flex-end;
     flex-shrink: 0;
-    list-style: none;
+    list-style: outside none none;
     background: 0 0;
     width: auto;
     overflow: visible;
@@ -74,12 +74,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
     margin-bottom: 10px;
 }
 
-.nav-container {
-    
-}
-
 .display-flex {
-        display: flex;
+    display: flex;
 }
 
 .full-height {
@@ -90,10 +86,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
     text-align: center;
     text-decoration:none;
     height: 100%;
+    opacity: 0.8;
     line-height: 12px;
     position: relative;
     display: block;
     color: #fff;
+}
+
+.nav-item__link:hover {
+    opacity: 1;
 }
 
 .nav-item__title {
@@ -123,4 +124,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
     height: 25px;
     width: auto;
     transition: opacity 0.3s;
+}
+
+.current {
+    opacity: 1;
 }

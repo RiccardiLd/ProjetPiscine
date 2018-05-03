@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" value="annuler">Annuler</button>
                         <span class="psw"><a href="#">Mot de passe oublié?</a></span>
                     </div>
                 </form>

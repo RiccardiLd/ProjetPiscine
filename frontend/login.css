@@ -50,12 +50,8 @@ img.avatar {
 }
 
 .container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
+    margin: auto;
+    padding: 10px;
 }
 
 /* The Modal (background) */
@@ -79,7 +75,7 @@ span.psw {
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border-radius: 5px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 45%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -186,8 +182,6 @@ span.psw {
     padding: 16px 32px 8px 32px;
 }
 
-
-
 .registration {
     background-color: #0073b1;
     border: 0;
@@ -241,4 +235,11 @@ label:first-of-type {
     justify-content: center;
     margin: 20px 0 20px;
     color: rgba(255,255,255,0.85);
+}
+
+.loginbtn {
+    float: right;
+    width: auto;
+    padding: 10px 18px;
+    background-color: #0073b1;
 }

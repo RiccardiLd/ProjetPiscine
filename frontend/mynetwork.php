@@ -18,7 +18,7 @@
                     </h1>
                     <ul class="nav-main display-flex full-height" role="navigation" aria-label="Primary">
                         <li id="home-nav-item" class="nav-item">
-                            <a href="home.php" data-hover="Accueil" class="nav-item__link  current">
+                            <a href="home.php" data-hover="Accueil" class="nav-item__link">
                                 <span id="feed-tab-icon" class="nav-item__icon" aria-role="presentation">
                                     <li-icon aria-hidden="true" type="nav-small-home-icon" color="true">
                                         <img class="icon" src="img/menu/home-outline.png" alt="Home" />
@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li id="mynetwork-nav-item" class="nav-item">
-                            <a href="mynetwork.php" data-hover="Mon Réseau" class="nav-item__link">
+                            <a href="mynetwork.php" data-hover="Mon Réseau" class="nav-item__link current">
                                 <span id="mynetwork-tab-icon" class="nav-item__icon" aria-role="presentation">
                                     <li-icon aria-hidden="true" type="nav-small-people-icon" color="true">
                                         <img class="icon" src="img/menu/my-network-outline.png" alt="Network" />

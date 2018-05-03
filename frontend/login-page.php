@@ -34,15 +34,10 @@
                         <label for="psw"><b>Mot de passe</b></label>
                         <input type="password" placeholder="Entrez votre mot de passe" name="psw" required>
 
-                        <button type="submit">Se connecter</button>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Rester connecté
-                        </label>
-                    </div>
-
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
-                        <span class="psw"><a href="#">Mot de passe oublié?</a></span>
+                        <div class="container" style="background-color:#f1f1f1">   
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
+                            <button type="submit" class="loginbtn">Se connecter</button> 
+                        </div>
                     </div>
                 </form>
             </div>
@@ -67,7 +62,7 @@
                 </section>
             </form>
         </div>
-        
+
         <div class="footer">
             <div class="copyright"><img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018</div>
         </div>

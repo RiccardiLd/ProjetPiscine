@@ -80,6 +80,18 @@
                     </ul>
                 </div>
             </div>
+            
+            <div class="feed">
+            
+            </div>
+            
+            <div class="profile">
+            
+            </div>
+            
+            <div class="stats">
+            
+            </div>
         </div>
 
         <div class="footer">

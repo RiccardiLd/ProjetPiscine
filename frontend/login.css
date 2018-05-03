@@ -14,7 +14,6 @@ input[type=text], input[type=password] {
 button {
     color: #fff;
     font-weight: 400;
-    border: none;
     cursor: pointer;
     display: inline-block;
     width: auto;
@@ -142,4 +141,117 @@ span.psw {
     height: 30px;
     width: auto;
     transition: opacity 0.3s;
+}
+
+.global-wrapper {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-width: 1128px;
+    min-height: 100vh;
+    margin: 0;
+    background: #355668;
+}
+
+.reg-form {
+    width: 400px;
+    padding: 0 0 24px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background: #EDF0F3;
+    overflow: hidden;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    justify-content: left;
+}
+
+.form-body {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    padding: 0 24px;
+    -webkit-box-flex: 1;
+    flex: 1;
+    min-width: 0;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 200;
+    margin: auto;
+    color: rgba(0,0,0,0.9);
+    flex: 100%;
+    background: #F6F8FA;
+    text-align: center;
+    padding: 16px 32px 8px 32px;
+}
+
+
+
+.registration {
+    background-color: #0073b1;
+    border: 0;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    overflow: hidden;
+    outline-width: 2px;
+    padding: 0 16px;
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    z-index: 0;
+    font-family: /* Roman */ -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Lucida Grande, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255,255,255,0.85);
+}
+
+label {
+    margin: 8px 0 4px;
+}
+
+label:first-of-type {
+    margin-top: 16px;
+}
+
+.footer {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #283e4a;
+    padding: 25px 0 0;
+}
+
+.logo-copyright {
+    margin: -3px 5px 0 0;
+    width: auto;
+    height: 14px;
+    opacity: 0.85;
+}
+
+.copyright {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 20px 0 20px;
+    color: rgba(255,255,255,0.85);
 }

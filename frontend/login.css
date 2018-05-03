@@ -130,7 +130,6 @@ span.psw {
 
 .wrapper {
     display: flex;
-    -webkit-box-pack: justify;
     justify-content: space-between;
     width: auto;
     height: 70px;
@@ -145,8 +144,6 @@ span.psw {
 
 .global-wrapper {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     flex-direction: column;
     min-width: 1128px;
     min-height: 100vh;
@@ -162,22 +159,16 @@ span.psw {
     background: #EDF0F3;
     overflow: hidden;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
     flex-flow: row wrap;
     justify-content: left;
 }
 
 .form-body {
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
     flex-flow: row wrap;
     padding: 0 24px;
-    -webkit-box-flex: 1;
     flex: 1;
     min-width: 0;
-    -webkit-box-pack: center;
     justify-content: center;
 }
 
@@ -228,12 +219,8 @@ label:first-of-type {
 
 .footer {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     flex-direction: column;
-    -webkit-box-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
     align-items: center;
     background-color: #283e4a;
     padding: 25px 0 0;
@@ -248,9 +235,7 @@ label:first-of-type {
 
 .copyright {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
-    -webkit-box-pack: center;
     justify-content: center;
     margin: 20px 0 20px;
     color: rgba(255,255,255,0.85);

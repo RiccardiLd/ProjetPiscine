@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
-        <title>LinkedOff - Messages</title>
+        <title>LinkedOff - Accueil</title>
         <link rel="icon" href="img/linkedoff_favicon.png">
         <link href="main.css" rel="stylesheet" type="text/css" />
     </head>
@@ -12,13 +12,13 @@
             <div class="header">
                 <div class="wrapper">
                     <h1>
-                        <a href="home.html">
+                        <a href="home.php">
                             <img class="logo" src="img/linkedoff_logo_white.png" alt="LinkedOff Logo" />
                         </a>
                     </h1>
                     <ul class="nav-main display-flex full-height" role="navigation" aria-label="Primary">
                         <li id="home-nav-item" class="nav-item">
-                            <a href="home.html" data-hover="Accueil" class="nav-item__link">
+                            <a href="home.php" data-hover="Accueil" class="nav-item__link  current">
                                 <span id="feed-tab-icon" class="nav-item__icon" aria-role="presentation">
                                     <li-icon aria-hidden="true" type="nav-small-home-icon" color="true">
                                         <img class="icon" src="img/menu/home-outline.png" alt="Home" />
@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li id="mynetwork-nav-item" class="nav-item">
-                            <a href="mynetwork.html" data-hover="Mon Réseau" class="nav-item__link ">
+                            <a href="mynetwork.php" data-hover="Mon Réseau" class="nav-item__link">
                                 <span id="mynetwork-tab-icon" class="nav-item__icon" aria-role="presentation">
                                     <li-icon aria-hidden="true" type="nav-small-people-icon" color="true">
                                         <img class="icon" src="img/menu/my-network-outline.png" alt="Network" />
@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li id="notifications-nav-item" class="nav-item">
-                            <a href="notifications.html" data-hover="Notifications" class="nav-item__link">
+                            <a href="notifications.php" data-hover="Notifications" class="nav-item__link">
                                 <span id="notifications-tab-icon" class="nav-item__icon" aria-role="presentation">
                                     <li-icon aria-hidden="true" type="nav-small-notifications-icon" color="true">
                                         <img class="icon" src="img/menu/notifications-bell-outline.png" alt="Notifications" />
@@ -48,7 +48,7 @@
                             </a>
                         </li>
                         <li id="messaging-nav-item" class="nav-item nav-item--messaging">
-                            <a href="messages.html" data-hover="Messagerie" class="nav-item__link current">
+                            <a href="messages.php" data-hover="Messagerie" class="nav-item__link">
                                 <span id="messaging-tab-icon" class="nav-item__icon" aria-role="presentation">
                                     <li-icon aria-hidden="true" type="nav-small-messaging-icon" color="true">
                                         <img class="icon" src="img/menu/speech-bubble-outline.png" alt="Messages" />
@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li id="jobs-nav-item" class="nav-item">
-                            <a href="jobs.html" data-hover="Emplois" class="nav-item__link">
+                            <a href="jobs.php" data-hover="Emplois" class="nav-item__link">
                                 <span id="jobs-tab-icon" class="nav-item__icon" aria-role="presentation">
                                     <li-icon aria-hidden="true" type="nav-small-jobs-icon" color="true">
                                         <img class="icon" src="img/menu/work-briefcase-outline.png" alt="Jobs" />

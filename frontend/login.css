@@ -245,3 +245,8 @@ label:first-of-type {
 .submit-button:hover {
     opacity: 0.8;
 }
+
+.reg-password {
+    border: 1px solid;
+    border-color: #ccc;
+}

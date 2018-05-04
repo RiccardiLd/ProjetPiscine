@@ -159,6 +159,7 @@ CREATE TABLE `notifications` (
     `parent_id` INTEGER NULL DEFAULT NULL COMMENT 'id of parent (msg, comment, like)',
     `type` VARCHAR(20) NULL DEFAULT NULL COMMENT 'Type of notification (msg, comment, like, etc)',
     `seen` TINYINT NULL DEFAULT 0,
+    `timestamp` TIMESTAMP NULL DEFAULT NULL,
     `user_create` VARCHAR(12),
     `user_receive` VARCHAR(12),
     PRIMARY KEY (`notif_id`)

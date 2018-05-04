@@ -80,12 +80,50 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="main-pane">
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'Mes contacts')">Mes contacts</button>
+                    <button class="tablinks" onclick="openTab(event, 'Mes invitations')">Mes invitations</button>
+                    <button class="tablinks" onclick="openTab(event, 'Rechercher')">Rechercher</button>
+                </div>
+
+                <div id="Mes contacts" class="tabcontent">
+                    <h3>Contacts</h3>
+                    <p>Affichage des contacts</p>
+                </div>
+
+                <div id="Mes invitations" class="tabcontent">
+                    <h3>Invitations</h3>
+                    <p>Affichage des invitations</p> 
+                </div>
+
+                <div id="Rechercher" class="tabcontent">
+                    <h3>Rechercher</h3>
+                    <p>Résultat de la recherche</p>
+                </div>
+            </div>
+
         </div>
 
         <div class="footer">
             <div class="copyright"><img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018</div>
 
         </div>
-
     </body>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </html>

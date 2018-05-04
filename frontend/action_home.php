@@ -9,10 +9,9 @@ session_start();
         $sql = "SELECT COUNT(*) AS nb FROM posts WHERE username = 'ECE'";
 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
-       
-        echo $data['posts'];
-        echo ' lol';
-        echo mysql_result($result, 0);
+        
+        echo ' lol ';
+        echo mysqli_fetch_field($result, 0);
     }
     else { echo "Base de données non trouvée."; }
 

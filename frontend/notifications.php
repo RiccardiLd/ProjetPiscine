@@ -1,7 +1,7 @@
 <?php
 session_start();
+require 'action_notifications.php';
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>

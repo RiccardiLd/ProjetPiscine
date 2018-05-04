@@ -223,3 +223,20 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+
+.job-pane {
+    background-color: transparent;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.job-item {
+    background: #EDF0F3;
+    border: 2px solid #888;
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 10px 5px;
+    min-width: 550px;
+    min-height: 200px;
+    justify-content: center;
+}

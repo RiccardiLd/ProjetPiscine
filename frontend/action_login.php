@@ -11,10 +11,10 @@ if($db_found) {
     }
     
     if($psw == $_POST["psw"]) {
-        echo "ok";
+        header("Location:home.php");
     }
     else {
-        echo "Mauvais identifiants"
+        header("Location:login-page.php");
     }
 }
 else { echo "Base de données non trouvée."; }

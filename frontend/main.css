@@ -195,6 +195,7 @@ button {
     display: flex;
     flex-flow: column wrap;
     justify-content: left;
+    padding-left: 20px;
 }
 
 .submit-search {

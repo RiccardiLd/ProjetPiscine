@@ -99,6 +99,7 @@ require 'action_notifications.php';
                 <div class="main-item">
                     <h3>Notifications</h3>
                     <p>Affichage des notifs</p>
+                    <p><?php echo notifications() ?></p>
                 </div>
             </div>
 

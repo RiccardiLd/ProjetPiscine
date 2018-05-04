@@ -2,7 +2,7 @@
 session_start();
 
 //function mynetwork1(){
-//}
+
 /*SELECT first_name , last_name 
 FROM users
 WHERE username IN (SELECT 

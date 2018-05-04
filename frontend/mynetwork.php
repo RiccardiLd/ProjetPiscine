@@ -99,6 +99,13 @@
                 </div>
 
                 <div id="Rechercher" class="tabcontent">
+                    <div class="search-container">
+                        <form action="action_search.php" class="search-form">
+                            <input type="text" placeholder="Recherche.." tabindex="1" name="search">
+                            <button type="submit" class="submit-search"><img class="icon" alt="Search" src="img/menu/search-icon.png"></button>
+                        </form>
+                    </div>
+                    
                     <h3>Rechercher</h3>
                     <p>Résultat de la recherche</p>
                 </div>

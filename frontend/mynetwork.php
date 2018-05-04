@@ -32,6 +32,16 @@ require 'action_mynetwork.php';
                                 <span class="nav-item__title">Accueil</span>
                             </a>
                         </li>
+                        <li id="profile-nav-item" class="nav-item">
+                            <a href="profile.php" data-hover="Moi" class="nav-item__link">
+                                <span id="profile-tab-icon" class="nav-item__icon" aria-role="presentation">
+                                    <li-icon aria-hidden="true" type="nav-small-user-icon" color="true">
+                                        <img class="icon" src="img/menu/user-outline.png" alt="Me" />
+                                    </li-icon>
+                                </span> 
+                                <span class="nav-item__title">Ma Page</span>
+                            </a>
+                        </li>
                         <li id="mynetwork-nav-item" class="nav-item">
                             <a href="mynetwork.php" data-hover="Mon Réseau" class="nav-item__link current">
                                 <span id="mynetwork-tab-icon" class="nav-item__icon" aria-role="presentation">

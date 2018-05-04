@@ -102,7 +102,7 @@
                     <p>Affichage de la liste d'amis</p>
                 </div>
                 <div class="main-pane">
-
+                    <p><?php echo posts() ?></p>
                 </div>
                 <div class="right-pane">
                     <h3>Mes statistiques</h3>

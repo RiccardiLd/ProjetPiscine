@@ -1,5 +1,29 @@
 <?php
 session_start();
+
+function posts(){
+    $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+
+    if($db_found) {            
+        $sql = "SELECT p.username, p.text
+        FROM posts p WHERE p.username != '".$_SESSION['myusername']."' AND (p.privacy = 'public' OR (p.privacy = 'contacts' AND ('".$_SESSION['myusername']."' = (SELECT c.username_user1 FROM contacts c WHERE c.username_user2 = p.username LIMIT 1) OR ('".$_SESSION['myusername']."' = (SELECT c.username_user2 FROM contacts c WHERE c.username_user1 = p.username LIMIT 1)))) OR ('".$_SESSION['myusername']."' = (SELECT g.username FROM group_member g WHERE g.group_id = p.privacy LIMIT 1))) ORDER BY p.timestamp DESC";
+
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+
+        while($data = mysqli_fetch_assoc($result)) {
+        echo ' -   '.$data['username'].'<br>';
+        echo $data['text'].'<br>'.'<br>';
+    }
+
+    }
+    else { echo "Base de données non trouvée."; }
+
+    mysqli_close($db_handle);}
+
+
+    
     function nb_con(){
     $database='linkedoff';
     $db_handle=mysqli_connect('localhost', 'root', 'root');       

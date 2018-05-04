@@ -14,7 +14,7 @@ FROM contacts WHERE username_user2 = '".$_SESSION['myusername']."' OR username_u
 
  */
 //CAS DES AMIS, affiche nom et prenom dans une seule case
- $sql = "concat (first_name,' ', last_name)
+ $sql = "SELECT concat (first_name,' ', last_name)
 FROM users
 WHERE username IN (SELECT 
 CASE WHEN username_user1 = '".$_SESSION['myusername']."' THEN username_user2 

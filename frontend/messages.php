@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +29,16 @@
                                     </li-icon>
                                 </span> 
                                 <span class="nav-item__title">Accueil</span>
+                            </a>
+                        </li>
+                        <li id="profile-nav-item" class="nav-item">
+                            <a href="profile.php" data-hover="Moi" class="nav-item__link">
+                                <span id="profile-tab-icon" class="nav-item__icon" aria-role="presentation">
+                                    <li-icon aria-hidden="true" type="nav-small-user-icon" color="true">
+                                        <img class="icon" src="img/menu/user-outline.png" alt="Me" />
+                                    </li-icon>
+                                </span> 
+                                <span class="nav-item__title">Ma Page</span>
                             </a>
                         </li>
                         <li id="mynetwork-nav-item" class="nav-item">
@@ -102,9 +112,11 @@
         </div>
 
         <div class="footer">
-            <div class="copyright"><img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018</div>
-            <div class="references"></div>
-            <div class="back-to-top"><a href="#">Back to top</a></div>
+            <div class="copyright">
+                <img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018 -&nbsp;
+                <a href="references.html" target="blank" class="footer__link">Bibliographie</a>
+            </div>
+            <div class="back-to-top"><a href="#" class="footer__link">Back to top</a></div>
         </div>
 
     </body>

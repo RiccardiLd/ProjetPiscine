@@ -20,7 +20,7 @@ CASE WHEN username_user1 = '".$_SESSION['myusername']."' THEN username_user2
 	 WHEN username_user2 = '".$_SESSION['myusername']."' THEN username_user1 
      ELSE NULL 
      END AS NewField 
-FROM contacts WHERE username_user2 = '".$_SESSION['myusername']."' OR username_user1 = '".$_SESSION['myusername']."')";
+FROM contacts WHERE (username_user2 = '".$_SESSION['myusername']."' OR username_user1 = '".$_SESSION['myusername']."') AND connected = 1)";
 ;
 echo $sql;
     

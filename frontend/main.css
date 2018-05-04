@@ -275,3 +275,7 @@ input[type=text], input[type=password] {
     min-height: inherit;
     overflow: scroll;
 }
+
+.main-item {
+    padding: 0 20px 0;
+}

@@ -87,7 +87,7 @@
                     <p>Affichage des informations</p>
                 </div>
                 <div class="main-pane">
-                    
+
                 </div>
                 <div class="right-pane">
                     <h3>Statistiques</h3>

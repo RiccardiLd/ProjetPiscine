@@ -11,7 +11,7 @@
             <div class="header">
                 <div class="wrapper">
                     <h1>
-                        <a href="login-page.html">
+                        <a href="login-page.php">
                             <img class="logo" src="img/linkedoff_logo_white.png" alt="LinkedOff Logo" />
                         </a>
                     </h1>
@@ -47,17 +47,17 @@
 
                 <section class="form-body">
                     <label for="reg-firstname">Prénom</label>
-                    <input type="text" name="firstName" id="reg-firstname" class="reg-firstname" aria-required="true" tabindex="1" placeholder="">
+                    <input type="text" name="firstName" id="reg-firstname" class="reg-firstname" aria-required="true" tabindex="1" placeholder="" required>
                     <label for="reg-lastname">Nom</label>
-                    <input type="text" name="lastName" id="reg-lastname" class="reg-lastname" aria-required="true" tabindex="1" placeholder="">
+                    <input type="text" name="lastName" id="reg-lastname" class="reg-lastname" aria-required="true" tabindex="1" placeholder="" required>
                     <label for="reg-username">Pseudonyme</label>
-                    <input type="text" name="username" class="reg-username" tabindex="1" id="reg-username" aria-required="true">
+                    <input type="text" name="username" class="reg-username" tabindex="1" id="reg-username" aria-required="true" required>
                     <label for="reg-email">Email</label>
-                    <input type="text" name="email" class="reg-email" autocapitalize="off" tabindex="1" id="reg-email" aria-required="true" autofocus="autofocus">
-                    <label for="reg-password">Mot de passe</label>
-                    <input type="password" name="session_password" class="reg-password" id="reg-password" aria-required="true" tabindex="1" autocomplete="new-password">
+                    <input type="text" name="email" class="reg-email" autocapitalize="off" tabindex="1" id="reg-email" aria-required="true" autofocus="autofocus" required>
+                    <label for="reg-password">Mot de passe (8 caractères minimum)</label>
+                    <input type="password" name="session_password" class="reg-password" id="reg-password" aria-required="true" tabindex="1" autocomplete="new-password" onkeyup="checkPasswordMatch()" required>
                     <label for="reg-password">Confirmez le mot de passe</label>
-                    <input type="password" name="session_password" class="reg-password" id="reg-password-confirm" aria-required="true" tabindex="1" autocomplete="new-password">
+                    <input type="password" name="session_password" class="reg-password" id="reg-password-confirm" aria-required="true" tabindex="1" autocomplete="new-password" onkeyup="checkPasswordMatch()" required>
                     <input tabindex="4" id="registration-submit" class="registration submit-button" type="submit" name="signup" value="S'inscrire">
                 </section>
             </form>
@@ -65,8 +65,9 @@
 
         <div class="footer">
             <div class="copyright"><img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018</div>
+            <div class="references"></div>
+            <div class="back-to-top"><a href="#">Back to top</a></div>
         </div>
-
         <script>
             // Get the modal
             var modal = document.getElementById('id01');
@@ -77,7 +78,28 @@
                     modal.style.display = "none";
                 }
             }
-        </script>
 
+            function checkPasswordMatch() {
+                var i;
+                var password = document.getElementById("reg-password");
+                var confirmPassword = document.getElementById("reg-password-confirm");
+                var regpassword = document.getElementsByClassName("reg-password");
+                if (password.value != confirmPassword.value || password.value.length < 8) {
+                    for (i = 0; i < regpassword.length; i++) {
+                        regpassword[i].style.borderColor = "#ef0000";
+                    }
+                    document.getElementById("registration-submit").disabled = true;
+                    document.getElementById("registration-submit").style.backgroundColor = "#79bfe5";
+                }
+                else {
+                    for (i = 0; i < regpassword.length; i++) {
+                        regpassword[i].style.borderColor = "#00ef00";
+                    }
+                    document.getElementById("registration-submit").disabled = false;
+                    document.getElementById("registration-submit").style.backgroundColor = "#0073b1";
+                }
+
+            }
+        </script>
     </body>
 </html>

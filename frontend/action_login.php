@@ -7,15 +7,14 @@ if($db_found) {
     $result = mysqli_query($db_handle, $sql) or die(mysql_error());
     
     while($data = mysqli_fetch_assoc($result)) {
-        echo $data['password'];
+        $psw= $data['password'];
     }
     
-    if($data['password'] == $_POST["psw"]) {
+    if($psw == $_POST["psw"]) {
         echo "ok";
     }
     else {
-        echo $data['password'];
-        echo $_POST["psw"];
+        echo "Mauvais identifiants"
     }
 }
 else { echo "Base de données non trouvée."; }

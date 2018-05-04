@@ -129,3 +129,114 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .current {
     opacity: 1;
 }
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #f1f1f1;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: inherit;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    padding: 10px auto;
+    margin: 0 auto;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+button {
+    color: #fff;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+    width: auto;
+    height: 32px;
+    margin: 20px 15px auto;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 2px;
+}
+
+.main-pane {
+    width: 700px;
+    min-height: inherit;
+    padding: 0 0 24px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background: #EDF0F3;
+    overflow: auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: left;
+}
+
+.submit-search {
+    background-color: #0073b1;
+    border: 0;
+    width: auto;
+    height: 38px;
+    border-radius: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    z-index: 0;
+    color: rgba(255,255,255,0.85);
+}
+
+.submit-search:hover {
+    opacity: 0.8;
+}
+
+.search-form {
+    display: flex;
+    flex-flow: row;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.job-pane {
+    background-color: transparent;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.job-item {
+    background: #EDF0F3;
+    border: 2px solid #888;
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 10px 5px;
+    min-width: 550px;
+    min-height: 200px;
+    justify-content: center;
+}

@@ -33,11 +33,6 @@
 
                         <label for="psw"><b>Mot de passe</b></label>
                         <input type="password" placeholder="Entrez votre mot de passe" name="psw" required>
-
-                        <button type="submit">Se connecter</button>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Rester connecté
-                        </label>
                     </div>
 
                     <div class="container" style="background-color:#f1f1f1">

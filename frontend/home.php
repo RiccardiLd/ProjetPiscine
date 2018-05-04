@@ -81,7 +81,8 @@
                 </div>
             </div>
             
-            <div class="feed">
+            <div class="main-pane">
+            
             
             </div>
             

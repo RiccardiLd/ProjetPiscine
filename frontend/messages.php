@@ -80,6 +80,12 @@
                     </ul>
                 </div>
             </div>
+            
+            <div class="main-pane">
+            
+            
+            </div>
+            
         </div>
 
         <div class="footer">

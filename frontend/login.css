@@ -1,10 +1,9 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
-/* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 0px auto;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -33,7 +32,16 @@ button:hover {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
+    margin: auto;
     background-color: #f44336;
+}
+
+.loginbtn {
+    float: right;
+    margin: auto;
+    width: auto;
+    padding: 10px 18px;
+    background-color: #0073b1;
 }
 
 /* Center the image and position the close button */
@@ -75,7 +83,7 @@ img.avatar {
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border-radius: 5px;
     border: 1px solid #888;
-    width: 45%; /* Could be more or less, depending on screen size */
+    width: 40%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -112,10 +120,7 @@ img.avatar {
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
-    }
+
     .cancelbtn {
         width: 100%;
     }
@@ -235,11 +240,4 @@ label:first-of-type {
     justify-content: center;
     margin: 20px 0 20px;
     color: rgba(255,255,255,0.85);
-}
-
-.loginbtn {
-    float: right;
-    width: auto;
-    padding: 10px 18px;
-    background-color: #0073b1;
 }

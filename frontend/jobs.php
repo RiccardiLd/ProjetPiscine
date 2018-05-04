@@ -80,6 +80,34 @@
                     </ul>
                 </div>
             </div>
+            
+            <div class="job-pane">
+                <div class="job-item">
+                    <h3>Emploi 1</h3>
+                    <p>Affichage des spécifications</p> 
+                </div>
+                <div class="job-item">
+                    <h3>Emploi 2</h3>
+                    <p>Affichage des spécifications</p> 
+                </div>
+                <div class="job-item">
+                    <h3>Emploi 3</h3>
+                    <p>Affichage des spécifications</p>  
+                </div>
+                <div class="job-item">
+                    <h3>Emploi 4</h3>
+                    <p>Affichage des spécifications</p>  
+                </div>
+                <div class="job-item">
+                    <h3>Emploi 5</h3>
+                    <p>Affichage des spécifications</p> 
+                </div>
+                <div class="job-item">
+                    <h3>Emploi 6</h3>
+                    <p>Affichage des spécifications</p> 
+                </div>
+            </div>
+            
         </div>
 
         <div class="footer">

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -83,8 +87,8 @@
 
             <div class="central-wrapper">
                 <div class="left-pane">
-                    <h3>Profil</h3>
-                    <p>Affichage des informations</p>
+                    <h3>Amis</h3>
+                    <p>Affichage de la liste d'amis</p>
                 </div>
                 <div class="main-pane">
 

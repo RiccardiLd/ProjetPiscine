@@ -1,29 +1,28 @@
 <?php
-/* Ci-dessous, la fonction qui prend un parametre le num utilisateur
-et affiche son nom*/
-function blabla($num_u)
-{
-	$database='linkece';
-	$db_handle=mysqli_connect('localhost', 'root', '');
-	$db_found=mysqli_select_db($db_handle,$database);
-	
-    if($db_found) {
-		
-		
-		
-		$sql = "SELECT* FROM users WHERE username = $num_u "; ///REQUETE SQL
-		$result = mysqli_query($db_handle, $sql) or die(mysql_error())  ;
-		while($data = mysqli_fetch_assoc($result)) {
-		 echo $data['Nom'];
-	}}
-		
-		}
-    else { echo "Base de données non trouvée."; }
+$database='linkedoff';
+$db_handle=mysqli_connect('localhost', 'root', 'root');       $db_found=mysqli_select_db($db_handle,$database);
 
-	mysqli_close($db_handle);
-		
-			
-        }
-				
+if($db_found) {            
+    $sql = "SELECT * FROM users WHERE username = '".$_POST["username"]."'"; 
+    $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+    
+    while($data = mysqli_fetch_assoc($result)) {
+        $uname= $data['username'];
+    }
+    
+    if(empty($uname)) {
+        $sql =  "INSERT INTO users(username, email, password, first_name, last_name, profile_photo, summary, status, graduation) VALUES('".$_POST["username"]."','".$_POST["email"]."','".$_POST["session_password"]."','".$_POST["firstName"]."','".$_POST["lastName"]."','','','normal user',null)";
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        header("Location:home.php");
+        echo "ok";
+    }
+    else {
+        header("Location:login-page.php");
+        echo "existe déjà";
+    }
+}
+else { echo "Base de données non trouvée."; }
+
+mysqli_close($db_handle);
 
 ?>

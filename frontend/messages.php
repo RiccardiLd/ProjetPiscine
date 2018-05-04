@@ -80,12 +80,21 @@
                     </ul>
                 </div>
             </div>
-            
-            <div class="main-pane">
-            
-            
+
+            <div class="central-wrapper">
+                <div class="left-pane">
+                    <h3>Conversations</h3>
+                    <p>Affichage des convs</p>
+                </div>
+                <div class="main-pane">
+
+                </div>
+                <div class="right-pane">
+                    <h3>Informations sur la conv</h3>
+                    <p>Affichage des infos</p>
+                </div>
             </div>
-            
+
         </div>
 
         <div class="footer">

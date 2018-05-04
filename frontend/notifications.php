@@ -82,8 +82,10 @@
             </div>
 
             <div class="main-pane">
-
-
+                <div class="main-item">
+                    <h3>Notifications</h3>
+                    <p>Affichage des notifs</p>
+                </div>
             </div>
 
         </div>

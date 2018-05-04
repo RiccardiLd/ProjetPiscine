@@ -33,16 +33,11 @@
 
                         <label for="psw"><b>Mot de passe</b></label>
                         <input type="password" placeholder="Entrez votre mot de passe" name="psw" required>
-
-                        <button type="submit">Se connecter</button>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Rester connecté
-                        </label>
                     </div>
 
                     <div class="container" style="background-color:#f1f1f1">
                         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" value="annuler">Annuler</button>
-                        <span class="psw"><a href="#">Mot de passe oublié?</a></span>
+                        <button type="submit" class="loginbtn">Se connecter</button>
                     </div>
                 </form>
             </div>

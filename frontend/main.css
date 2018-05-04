@@ -133,6 +133,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
+    border-radius: 2px;
     background-color: #f1f1f1;
 }
 

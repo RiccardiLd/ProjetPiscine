@@ -83,7 +83,7 @@
 
             <div class="main-pane">
                 <div class="tab">
-                    <button class="tablinks" onclick="openTab(event, 'Mes contacts')">Mes contacts</button>
+                    <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Mes contacts')">Mes contacts</button>
                     <button class="tablinks" onclick="openTab(event, 'Mes invitations')">Mes invitations</button>
                     <button class="tablinks" onclick="openTab(event, 'Rechercher')">Rechercher</button>
                 </div>
@@ -125,5 +125,7 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
         }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
     </script>
 </html>

@@ -68,7 +68,7 @@
                             </a>
                         </li>
                         <li id="logoff-nav-item" class="nav-item">
-                            <a href="logoff" data-hover="Déconnexion" class="nav-item__link">
+                            <a href="login-page.php" data-hover="Déconnexion" class="nav-item__link">
                                 <span id="logoff-tab-icon" class="nav-item__icon" aria-role="presentation">
                                     <li-icon aria-hidden="true" type="nav-small-logoff-icon" color="true">
                                         <img class="icon" src="img/menu/power-button-off.png" alt="On/Off" />

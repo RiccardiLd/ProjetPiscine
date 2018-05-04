@@ -80,18 +80,19 @@
                     </ul>
                 </div>
             </div>
-            
-            <div class="main-pane">
-            
-            
-            </div>
-            
-            <div class="profile">
-            
-            </div>
-            
-            <div class="stats">
-            
+
+            <div class="central-wrapper">
+                <div class="left-pane">
+                    <h3>Profil</h3>
+                    <p>Affichage des informations</p>
+                </div>
+                <div class="main-pane">
+                    
+                </div>
+                <div class="right-pane">
+                    <h3>Statistiques</h3>
+                    <p>Affichage des stats</p>
+                </div>
             </div>
         </div>
 

@@ -240,3 +240,38 @@ input[type=text], input[type=password] {
     min-height: 200px;
     justify-content: center;
 }
+
+.left-pane {
+    background: #EDF0F3;
+    position: fixed;
+    min-height: 300px;
+    width: 290px;
+    margin: inherit;
+    margin-left: 10px;
+    padding: 10px 5px;
+    border: 2px solid #888;
+    border-radius: 5px;
+}
+
+.right-pane {
+    background: #EDF0F3;
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    min-height: 300px;
+    width: 290px;
+    margin: inherit;
+    margin-right: 10px;
+    padding: 10px 5px;
+    border: 2px solid #888;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.central-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    min-width: inherit;
+    min-height: inherit;
+    overflow: scroll;
+}

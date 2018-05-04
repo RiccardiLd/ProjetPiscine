@@ -119,9 +119,11 @@ require 'action_mynetwork.php';
         </div>
 
         <div class="footer">
-            <div class="copyright"><img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018</div>
-            <div class="references"></div>
-            <div class="back-to-top"><a href="#">Back to top</a></div>
+            <div class="copyright">
+                <img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018 -&nbsp;
+                <a href="references.html" target="blank" class="footer__link">Bibliographie</a>
+            </div>
+            <div class="back-to-top"><a href="#" class="footer__link">Back to top</a></div>
         </div>
     </body>
     <script>

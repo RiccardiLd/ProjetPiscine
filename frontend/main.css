@@ -286,5 +286,24 @@ input[type=text], input[type=password] {
 }
 
 .back-to-top {
-    color: white;
+    position: relative;
+    bottom: 5px;
+}
+
+.footer__link {
+    opacity: 0.7;
+}
+
+.footer__link:hover {
+    opacity: 1;
+}
+
+.reference-wrapper {
+    color: #fff;
+    background-color: #355668;
+    min-height: inherit;
+    margin: 15px 15px;
+    padding: 5px 12px;
+    border: 2px solid #888;
+    border-radius: 5px;
 }

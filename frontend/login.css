@@ -1,5 +1,10 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -249,4 +254,17 @@ label:first-of-type {
 .reg-password {
     border: 1px solid;
     border-color: #ccc;
+}
+
+.back-to-top {
+    position: relative;
+    bottom: 5px;
+}
+
+.footer__link {
+    opacity: 0.7;
+}
+
+.footer__link:hover {
+    opacity: 1;
 }

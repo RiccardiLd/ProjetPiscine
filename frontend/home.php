@@ -106,7 +106,7 @@
                 </div>
                 <div class="right-pane">
                     <h3>Mes statistiques</h3>
-                    <p><?php echo 'loulou' ?></p>
+                    <p>J'ai publié <?php echo nb_posts() ?> publication(s)</p>
                 </div>
             </div>
         </div>

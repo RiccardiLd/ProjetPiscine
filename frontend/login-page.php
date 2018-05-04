@@ -21,7 +21,7 @@
 
             <div id="id01" class="modal">
 
-                <form class="modal-content animate" action="/action_login.php">
+                <form class="modal-content animate" action="/action_login.php" method="post">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                         <img src="img/avatar.png" alt="Avatar" class="avatar">

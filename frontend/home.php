@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'action_home.php';
+    
 ?>
 
 <!DOCTYPE html>
@@ -105,8 +105,8 @@
 
                 </div>
                 <div class="right-pane">
-                    <h3>Statistiques</h3>
-                    <p>Affichage des stats</p>
+                    <h3>Mes statistiques</h3>
+                    <p><?php echo 'loulou' ?></p>
                 </div>
             </div>
         </div>

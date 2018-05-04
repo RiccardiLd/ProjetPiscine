@@ -33,7 +33,11 @@ AND c.connected = 0
 AND c.username_user1 = '".$_SESSION['myusername']."'";
 echo $sql;
 
-
+///Cas de la recherche attention changer variable ! ici username alors que c'est les valeurs du champs recherches
+$sql = "SELECT first_name, last_name
+FROM users
+WHERE (first_name LIKE '".$_SESSION['myusername']."%' OR last_name LIKE '".$_SESSION['myusername']."%' OR '".$_SESSION['myusername']."' = graduation)";
+echo $sql;///ATTENTION
     
 /*$database='linkedoff';
 $db_handle=mysqli_connect('localhost', 'root', 'root');       

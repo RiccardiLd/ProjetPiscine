@@ -1,5 +1,6 @@
 <?php
-session_start();
+    session_start();
+    require 'action_home.php';
 ?>
 
 <!DOCTYPE html>

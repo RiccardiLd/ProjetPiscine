@@ -1,5 +1,10 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 .header {
     background-color: #283e4a;
     padding: 0 12px;
@@ -278,4 +283,8 @@ input[type=text], input[type=password] {
 
 .main-item {
     padding: 0 20px 0;
+}
+
+.back-to-top {
+    color: white;
 }

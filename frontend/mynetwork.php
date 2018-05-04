@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    require 'action_mynetwork.php';
+session_start();
+require 'action_mynetwork.php';
 ?>
 
 <!DOCTYPE html>
@@ -120,7 +120,8 @@
 
         <div class="footer">
             <div class="copyright"><img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018</div>
-
+            <div class="references"></div>
+            <div class="back-to-top"><a href="#">Back to top</a></div>
         </div>
     </body>
     <script>

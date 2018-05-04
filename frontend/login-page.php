@@ -11,7 +11,7 @@
             <div class="header">
                 <div class="wrapper">
                     <h1>
-                        <a href="login-page.html">
+                        <a href="login-page.php">
                             <img class="logo" src="img/linkedoff_logo_white.png" alt="LinkedOff Logo" />
                         </a>
                     </h1>
@@ -65,6 +65,8 @@
 
         <div class="footer">
             <div class="copyright"><img class="logo-copyright" alt="LinkedOff" src="img/linkedoff_logo_white.png"> © 2018</div>
+            <div class="references"></div>
+            <div class="back-to-top"><a href="#">Back to top</a></div>
         </div>
         <script>
             // Get the modal

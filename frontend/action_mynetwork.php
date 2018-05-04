@@ -12,8 +12,8 @@ CASE WHEN username_user1 = '".$_SESSION['myusername']."' THEN username_user2
 FROM contacts WHERE username_user2 = '".$_SESSION['myusername']."' OR username_user1 = '".$_SESSION['myusername']."')
 
  */
-
- $sql = "SELECT first_name , last_name 
+//CAS DES AMIS, affiche nom et prenom dans une seule case
+ $sql = "concat (first_name,' ', last_name)
 FROM users
 WHERE username IN (SELECT 
 CASE WHEN username_user1 = '".$_SESSION['myusername']."' THEN username_user2 
@@ -21,8 +21,18 @@ CASE WHEN username_user1 = '".$_SESSION['myusername']."' THEN username_user2
      ELSE NULL 
      END AS NewField 
 FROM contacts WHERE (username_user2 = '".$_SESSION['myusername']."' OR username_user1 = '".$_SESSION['myusername']."') AND connected = 1)";
-;
+
 echo $sql;
+
+//CAS des gens qui souhaite entrer dans votre réseau, rend juste NOM et Prénom dans une case
+$sql = "SELECT concat (u.first_name,' ', u.last_name)
+FROM users u, contacts c
+WHERE u.username = c.username_user2 
+AND c.connected = 0
+AND c.username_user1 = '".$_SESSION['myusername']."'";
+echo $sql;
+
+
     
 /*$database='linkedoff';
 $db_handle=mysqli_connect('localhost', 'root', 'root');       

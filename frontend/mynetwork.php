@@ -1,3 +1,7 @@
+<?php
+require 'action_mynetwork.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

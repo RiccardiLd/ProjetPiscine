@@ -58,7 +58,7 @@
                     <input type="password" name="session_password" class="reg-password" id="reg-password" aria-required="true" tabindex="1" autocomplete="new-password">
                     <label for="reg-password">Confirmez le mot de passe</label>
                     <input type="password" name="session_password" class="reg-password" id="reg-password-confirm" aria-required="true" tabindex="1" autocomplete="new-password">
-                    <input tabindex="4" id="registration-submit" class="registration submit-button" type="submit" value="S'inscrire">
+                    <input tabindex="4" id="registration-submit" class="registration submit-button" type="submit" name="signup" value="S'inscrire">
                 </section>
             </form>
         </div>

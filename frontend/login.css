@@ -241,3 +241,7 @@ label:first-of-type {
     margin: 20px 0 20px;
     color: rgba(255,255,255,0.85);
 }
+
+.submit-button:hover {
+    opacity: 0.8;
+}

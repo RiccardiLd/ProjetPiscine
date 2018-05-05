@@ -8,8 +8,8 @@ function posts(){
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-        $sql = "SELECT u.first_name, u.last_name, p.text, p.timestamp, p.post_id, c.username_user, c.timestamp, c.content
-FROM posts p, users u, comments c WHERE (p.post_id = c.post_id) AND (p.username = '".$_SESSION['myusername']."' AND p.username = u.username) OR (p.username != '".$_SESSION['myusername']."' AND (p.privacy = 'public' OR (p.privacy = 'contacts' AND ('".$_SESSION['myusername']."' = (SELECT c.username_user1 FROM contacts c WHERE c.username_user2 = p.username AND c.connected = 1 LIMIT 1) OR ('".$_SESSION['myusername']."' = (SELECT c.username_user2 FROM contacts c WHERE c.username_user1 = p.username AND c.connected = 1 LIMIT 1)))) OR ('".$_SESSION['myusername']."' = (SELECT g.username FROM group_member g WHERE g.group_id = p.privacy LIMIT 1)))AND u.username = p.username) ORDER BY p.timestamp DESC";
+        $sql = "SELECT u.first_name, u.last_name, p.text, p.timestamp, p.post_id
+FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.username = u.username) OR (p.username != '".$_SESSION['myusername']."' AND (p.privacy = 'public' OR (p.privacy = 'contacts' AND ('".$_SESSION['myusername']."' = (SELECT c.username_user1 FROM contacts c WHERE c.username_user2 = p.username AND c.connected = 1 LIMIT 1) OR ('".$_SESSION['myusername']."' = (SELECT c.username_user2 FROM contacts c WHERE c.username_user1 = p.username AND c.connected = 1 LIMIT 1)))) OR ('".$_SESSION['myusername']."' = (SELECT g.username FROM group_member g WHERE g.group_id = p.privacy LIMIT 1)))AND u.username = p.username) ORDER BY p.timestamp DESC";
 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
 
@@ -30,15 +30,15 @@ FROM posts p, users u, comments c WHERE (p.post_id = c.post_id) AND (p.username 
                     <span onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
                     print '" class="close" title="Close Modal">&times;</span>
                 </div>';
-                while($data = mysqli_fetch_assoc($result)) {
-                    print '<p class="post-content"></p>';
-                }
+                
                 print '
                 <div class="container">
                     <label for="uname"><b>Votre commentaire :</b></label>
                     <input type="text" placeholder="Entrez ici votre commentaire" name="uname" required>
                 </div>
-
+                
+                <input type="text" name="post_id" value="'.$data['post_id'].'"readonly>
+                
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" "'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
                     print '" class="cancelbtn" value="annuler">Annuler</button>

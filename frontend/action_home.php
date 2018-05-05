@@ -45,7 +45,7 @@ FROM posts p, users u, comments com WHERE (p.post_id = com.post_id) AND (com.use
                 print '
                 <div class="container">
                     <label for="uname"><b>Votre commentaire :</b></label>
-                    <input type="text" placeholder="Entrez ici votre commentaire" name="uname" required>
+                    <input type="text" placeholder="Entrez ici votre commentaire" name="uname">
                 </div>
                 
                 <input type="text" name="post_id" value="'.$data['post_id'].'"readonly>
@@ -54,7 +54,7 @@ FROM posts p, users u, comments com WHERE (p.post_id = com.post_id) AND (com.use
                     <button type="button" "'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
                     print '" class="cancelbtn" value="annuler">Annuler</button>
                     <button type="submit" name="post-comment" class="postbtn">Commenter</button>
-                    <button name="like" class="submit-post" id=""><img class="icon" alt="like" src="img/menu/like.png"></button>
+                    <button type="submit" formaction="/action_like.php" name="like" class="submit-post" id=""><img class="icon" alt="like" src="img/menu/like.png"></button>
                     <button onclick="" name="share" class="submit-post" id=""><img class="icon" alt="share" src="img/menu/share.png"></button>
                 </div>
             </form>

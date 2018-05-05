@@ -6,11 +6,11 @@ session_start();
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {           
-        $sql = "INSERT INTO comments (comment_id, post_id, username_user, content, timestamp) VALUES ('', '".$_POST["post_id"]."','".$_SESSION["myusername"]."','".$_POST["uname"]."', NOW())";
-
+        $sql = "INSERT INTO likes (username_user, post_id, timestamp) VALUES ('".$_SESSION["myusername"]."','".$_POST["post_id"]."', NOW())";
+        
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
-        $sql = "INSERT INTO notifications (notif_id, parent_id, type, seen, timestamp, user_create, user_receive) VALUES ('', '".$_POST["post_id"]."', 'comment','0', NOW(), '".$_SESSION["myusername"]."', (SELECT username FROM posts WHERE post_id = ".$_POST["post_id"]."))";
+        $sql = "INSERT INTO notifications (notif_id, parent_id, type, seen, timestamp, user_create, user_receive) VALUES ('', '".$_POST["post_id"]."', 'like','0', NOW(), '".$_SESSION["myusername"]."', (SELECT username FROM posts WHERE post_id = ".$_POST["post_id"]."))";
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
     }

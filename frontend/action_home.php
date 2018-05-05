@@ -18,9 +18,9 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
         print '<p class="post-content"></p>';
         print '<p class="post-content">'.$data['text'].'</p>';
         print '<div class="post-bottom">
-                            <button onclick="" id="comment" class="submit-post" name="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
-                            <button onclick="" id="like" class="submit-post" name="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/like.png"></button>
-                            <button onclick="" id="share" class="submit-post" name="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/share.png"></button>
+                            <button onclick="" name="comment" class="submit-post" id="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
+                            <button onclick="" name="like" class="submit-post" id="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/like.png"></button>
+                            <button onclick="" name="share" class="submit-post" id="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/share.png"></button>
                </div>';
         print '<span class="time-left">'.$data['timestamp'].'</span>';
     }

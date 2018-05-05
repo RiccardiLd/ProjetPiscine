@@ -111,6 +111,25 @@
                             <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/search-icon.png">  </button>
                         </form>
                     </div>
+                    <select name="Fonction">
+
+          <option value="public">Public</option>
+
+          <option value="contacts">Contacts</option>
+
+          <option value="public"></option>
+        
+        <option value="public"></option>
+
+          <option value="public"></option>
+
+          <option value="public"></option>
+
+          <option value="public"></option>
+
+         <option value="public"></option>
+
+     </select>
                       <?php 
                     if(isset($_POST['bouton'])){
                      post($_POST['post']);

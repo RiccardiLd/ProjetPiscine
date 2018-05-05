@@ -166,4 +166,15 @@ $_SESSION['convId']=1;
         </div>
 
     </body>
+    <script>
+        // Get the modal
+        var modal = document.getElementsByName('comment');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </html>

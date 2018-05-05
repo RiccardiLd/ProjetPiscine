@@ -241,12 +241,12 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
  ('Reinim','theo.minier@edu.ece.fr','cykablyat3','Théo','Minier','','','admin');
 
  INSERT INTO `posts` (`username`,`privacy`,`type`,`text`,`content`,`timestamp`,`id_shared_post`) VALUES
- ('ECE','public','emploi','Offre de CDD - AXA','NULL','NOW()','NULL');
- ('ECE','public','emploi','Offre de stage - Société Générale','NULL','NOW()','NULL');
- ('ECE','public','emploi','Offre de CDD - Google','NULL','NOW()','NULL');
- ('ECE','public','emploi','Offre de stage - Microsoft','NULL','NOW()','NULL');
- ('ECE','public','emploi','Offre de stage - Apple','NULL','NOW()','NULL');
- ('ECE','public','emploi','Offre de stage - ECE','NULL','NOW()','NULL');
+ ('ECE','public','emploi','Offre de CDD - AXA','','NOW()',''),
+ ('ECE','public','emploi','Offre de stage - Société Générale','','NOW()',''),
+ ('ECE','public','emploi','Offre de CDD - Google','','NOW()',''),
+ ('ECE','public','emploi','Offre de stage - Microsoft','','NOW()',''),
+ ('ECE','public','emploi','Offre de stage - Apple','','NOW()',''),
+ ('ECE','public','emploi','Offre de stage - ECE','','NOW()','');
 
  INSERT INTO `contacts` (`username_user1`,`username_user2`,`type`,`connected`,`timestamp`) VALUES
  ('ECE','RiccardiLd','','1','2018-04-20 13:23:44'),
@@ -275,8 +275,11 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
  ('RiccardiLd','Java','Avancé'),
  ('JoVieira','Web Design','Avancé');
 
--- INSERT INTO `notifications` (`notif_id`,`parent_id`,`type`,`seen`,`user_create`,`user_receive`) VALUES
--- ('','','','','','');
+ INSERT INTO `notifications` (`parent_id`,`type`,`seen`,`timestamp`,`user_create`,`user_receive`) VALUES
+('0','post','0','NOW()', 'ECE', 'RiccardiLd'),
+('0','post','0','NOW()', 'ECE', 'JoVieira'),
+('0','post','0','NOW()', 'ECE', 'Reinim'),
+('0','post','0','NOW()', 'ECE', 'ECE');
 
 -- INSERT INTO `group_member` (`group_id`,`username`) VALUES
 -- ('','');

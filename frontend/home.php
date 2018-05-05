@@ -2,7 +2,7 @@
 require 'action_home.php';
 require 'action_mynetwork.php';
 $_SESSION['hisusername'] = $_SESSION['myusername'];
-
+$_SESSION['count'] = 0;
 
 ?>
 
@@ -143,16 +143,9 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
                     ?>
 
                     <div class="post">
-                        <h3 class="page-title">Mon fil d'actualités</h3>
-                        <p class="post-content">
-                            <img src="img/avatar.png" alt="postImg" class="profile-post">
-                            <?php echo posts() ?>
-                        </p>
-                        <div class="post-bottom">
-                            <button onclick="" class="submit-post" name = "boutonComment"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
-                            <button onclick="" class="submit-post" name = "boutonLike"><img class="icon" alt="Go" src="img/menu/like.png"></button>
-                            <button onclick="" class="submit-post" name = "boutonShare"><img class="icon" alt="Go" src="img/menu/share.png"></button>
-                        </div>
+                        <h2 class="page-title">Mon fil d'actualités</h2>
+                        <?php echo posts() ?>
+                        
                     </div>
                 </div>
                 <div class="right-pane">

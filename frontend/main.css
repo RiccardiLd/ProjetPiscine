@@ -315,6 +315,13 @@ input[type=text], input[type=password] {
     text-justify: inter-word;
     overflow: auto;
     padding: 5px 5px;
+}
+
+.post-title {
+    text-align: justify;
+    text-justify: inter-word;
+    overflow: auto;
+    padding: 5px 5px;
     border-top: 2px solid #888;
 }
 
@@ -334,8 +341,6 @@ input[type=text], input[type=password] {
     margin-right: 20px;
     margin-bottom: 10px;
 }
-
-
 
 .page-title {
     text-align: center;

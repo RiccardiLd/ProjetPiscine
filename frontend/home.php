@@ -1,6 +1,7 @@
 <?php
     session_start();
     require 'action_home.php';
+    require 'action_mynetwork.php';
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +100,8 @@
             <div class="central-wrapper">
                 <div class="left-pane">
                     <h3>Amis</h3>
-                    <p>Affichage de la liste d'amis</p>
+                     <p><?php mynetwork() ?></p>
+                    
                 </div>
                 <div class="main-pane">
                     

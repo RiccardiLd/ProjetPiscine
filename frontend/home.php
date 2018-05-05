@@ -1,6 +1,6 @@
 <?php
-    require 'action_home.php';
-    require 'action_mynetwork.php';
+require 'action_home.php';
+require 'action_mynetwork.php';
 $_SESSION['hisusername'] = $_SESSION['myusername'];
 
 
@@ -113,7 +113,7 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
                     <div class="search-container">
                         <form method="post" class="search-form">
                             <input type="text" placeholder="Publiez.." tabindex="1" name="post">
-                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
+                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Go" src="img/menu/go-button.png"></button>
                             <select name="group">
 
                                 <option value="public">Public</option>
@@ -142,9 +142,13 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
     }
                     ?>
 
-
-
-                    <p><?php echo posts() ?></p>
+                    <div class="">
+                        <p class="post-content">
+                            <img src="img/avatar.png" alt="postImg" class="profile-post">
+                            <?php echo posts() ?>
+                        </p>
+                        <p class="post-content"><?php echo posts() ?></p>
+                    </div>
                 </div>
                 <div class="right-pane">
                     <h3>Mes statistiques</h3>

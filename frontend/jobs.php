@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'action_jobs.php';
+$_SESSION['hisusername'] = $_SESSION['myusername'];
 ?>
 
 <!DOCTYPE html>

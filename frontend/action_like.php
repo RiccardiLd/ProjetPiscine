@@ -7,7 +7,7 @@ session_start();
 
     if($db_found) {           
         $sql = "INSERT INTO likes (username_user, post_id, timestamp) VALUES ('".$_SESSION["myusername"]."','".$_POST["post_id"]."', NOW())";
-        
+        echo $sql;
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
         $sql = "INSERT INTO notifications (notif_id, parent_id, type, seen, timestamp, user_create, user_receive) VALUES ('', '".$_POST["post_id"]."', 'like','0', NOW(), '".$_SESSION["myusername"]."', (SELECT username FROM posts WHERE post_id = ".$_POST["post_id"]."))";

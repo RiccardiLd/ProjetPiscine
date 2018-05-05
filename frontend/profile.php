@@ -110,23 +110,51 @@ $_SESSION['convId']=1;
                     <p><?php echo myposts() ?></p>
                 </div>
                 <div class="right-pane">
-                    <h4>Modifier le profil</h4>
+                 
+                    
+                    <?php
+    if($_SESSION['myusername'] == $_SESSION['hisusername'])
+    {
+     echo
+                    '<h4>Modifier le profil</h4>
                     <p>Réécrire sa bio</p>
                     <div class="search-container">
                         <form method="post" class="search-form">
                             <input type="text" placeholder="Réécrire.." tabindex="1" name="bio">
                             <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
                         </form>
-                        <?php if(isset($_POST['bouton'])){bio($_POST['bio']);} ?>
+                        <?php if(isset($_POST["bouton"])){bio($_POST["bio"]);} ?>
                     </div>
                     <p>Changer sa photo de profil</p>
                     <div class="search-container">
                         <form method="post" class="search-form">
-                            <input type="text" placeholder="Insérez ici l'URL" tabindex="1" name="photo">
+                            <input type="text" placeholder="Insérez ici l URL" tabindex="1" name="photo">
                             <button type="submit" class="submit-search" name = "bouton_photo"><img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
                         </form>
-                        <?php if(isset($_POST['bouton_photo'])){profilepic($_POST['photo']);} ?>
-                    </div>
+                        <?php if(isset($_POST["bouton_photo"])){profilepic($_POST["photo"]);} ?>
+                    </div>';   
+    }
+                        else
+                        {
+                            if(!ifalreadyfriend())
+                            {
+                                echo
+                           ' <form method="post" class="search-form">
+                            <button type="submit" class="submit-search" name = "bouton">Demander à entrer dans son réseau<img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
+                        </form>';
+                            
+            if(isset($_POST['bouton'])){
+                    friend_request();
+                            }
+                            
+    }
+                        }
+                    
+                    
+                    
+                    
+                    
+                   ?> 
                 </div>
             </div>
         </div>

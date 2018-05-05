@@ -19,9 +19,9 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
         print '<p class="post-content">'.$data['text'].'</p>';
         print '<div class="post-bottom">
                             <button onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='block'";
-                            print '" name="comment" class="submit-post" id=""><img class="icon" alt="Go" src="img/menu/coment.png"></button>
-                            <button name="like" class="submit-post" id=""><img class="icon" alt="Go" src="img/menu/like.png">'.$data['post_id'].'</button>
-                            <button onclick="" name="share" class="submit-post" id=""><img class="icon" alt="Go" src="img/menu/share.png"></button>
+                            print '" name="comment" class="submit-post" id=""><img class="icon" alt="Go" src="img/menu/list-with-dots.png"></button>
+                            <button name="like" class="submit-post" id=""><img class="icon" alt="like" src="img/menu/like.png">'.$data['post_id'].'</button>
+                            <button onclick="" name="share" class="submit-post" id=""><img class="icon" alt="share" src="img/menu/share.png"></button>
                </div>';
         print '<span class="time-left">'.$data['timestamp'].'</span>';
         print '<div id="'.$data['post_id'].'" class="modal">

@@ -101,7 +101,7 @@ require 'action_profile.php';
                     <h3>Profil</h3>
                     <?php myprofilepic() ?>
                     <?php $image = $_SESSION['profilepic']; 
-                        print '<img src="'.$image.'" height="256" width="256" alt="profile photo" />'; ?>
+                    print '<img src="'.$image.'" height="256" width="256" alt="profile photo" />'; ?>
                     <p><?php echo myinfos() ?></p>
                 </div>
                 <div class="main-pane">
@@ -114,7 +114,7 @@ require 'action_profile.php';
                     <div class="search-container">
                         <form method="post" class="search-form">
                             <input type="text" placeholder="Réécrire.." tabindex="1" name="bio">
-                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/search-icon.png">  </button>
+                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
                         </form>
                         <?php if(isset($_POST['bouton'])){bio($_POST['bio']);} ?>
                     </div>
@@ -122,7 +122,7 @@ require 'action_profile.php';
                     <div class="search-container">
                         <form method="post" class="search-form">
                             <input type="text" placeholder="Insérez ici l'URL" tabindex="1" name="photo">
-                            <button type="submit" class="submit-search" name = "bouton_photo"><img class="icon" alt="Search" src="img/menu/search-icon.png">  </button>
+                            <button type="submit" class="submit-search" name = "bouton_photo"><img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
                         </form>
                         <?php if(isset($_POST['bouton_photo'])){profilepic($_POST['photo']);} ?>
                     </div>

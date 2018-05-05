@@ -110,13 +110,13 @@ $_SESSION['convId']=1;
                     <p><?php echo myposts() ?></p>
                 </div>
                 <div class="right-pane">
-                 
-                    
+
+
                     <?php
     if($_SESSION['myusername'] == $_SESSION['hisusername'])
     {
-     echo
-                    '<h4>Modifier le profil</h4>
+        echo
+            '<h4>Modifier le profil</h4>
                     <p>Réécrire sa bio</p>
                     <div class="search-container">
                         <form method="post" class="search-form">
@@ -136,37 +136,43 @@ $_SESSION['convId']=1;
     }
                         else
                         {
-                            if(!ifalreadyfriend()&&!iffriendasked())
+                            if(!ifalreadyfriend()&&ifIasked())
+                            {
+                               
+                            }
+                        
+                            
+                           else if(!ifalreadyfriend()&&iffriendasked())
                             {
                                 echo
-                           ' <form method="post" class="search-form">
-                            <button type="submit" class="submit-search" name = "bouton">Demander à entrer dans son réseau<img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
-                        </form>';
-                            
-            if(isset($_POST['bouton'])){
-                    friend_request();
-                            }
-                            
-                            }
-                            if(!ifalreadyfriend()&&iffriendasked())
-                            {
-                                echo
-                           ' <form method="post" class="search-form">
+                                    ' <form method="post" class="search-form">
                             <button type="submit" class="submit-search" name = "bouton">Accepter à entrer dans son réseau<img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
                         </form>';
-                            
-            if(isset($_POST['bouton'])){
-                    friend_request_accept();
+
+                                if(isset($_POST['bouton'])){
+                                    friend_request_accept();
+                                }
+
                             }
-                            
+                        else if(!ifalreadyfriend())
+                            {
+                                echo
+                                    ' <form method="post" class="search-form">
+                            <button type="submit" class="submit-search" name = "bouton">Demander à entrer dans son réseau<img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
+                        </form>';
+
+                                if(isset($_POST['bouton'])){
+                                    friend_request();
+                                }
+
                             }
                         }
-                    
-                    
-                    
-                    
-                    
-                   ?> 
+
+
+
+
+
+                    ?> 
                 </div>
             </div>
         </div>

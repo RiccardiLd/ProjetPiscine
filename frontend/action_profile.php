@@ -136,10 +136,10 @@ function ifalreadyfriend()
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-        $sql = "SELECT COUNT(*) as nb FROM contacts WHERE ('".$_SESSION['hisusername']."' = username_user1 AND '".$_SESSION['myusername']."' = username_user2 AND connected = 1)OR('".$_SESSION['hisusername']."' = username_user2 AND '".$_SESSION['myusername']."' = username_user1 AND connected = 1)"; 
+        $sql = "SELECT COUNT(*) as nb FROM contacts WHERE (('".$_SESSION['hisusername']."' = username_user1 AND '".$_SESSION['myusername']."' = username_user2 AND connected = 1) OR ('".$_SESSION['hisusername']."' = username_user2 AND '".$_SESSION['myusername']."' = username_user1 AND connected = 1))"; 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         $data = mysqli_fetch_assoc($result);
-        
+        //echo $data['nb'];
         if($data['nb']==0)
         {
             return false;
@@ -151,9 +151,8 @@ function ifalreadyfriend()
         }
         
         
-
-        
-}}
+        }
+}
 
 function iffriendasked()
 {
@@ -162,9 +161,14 @@ function iffriendasked()
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-        $sql = "SELECT COUNT(*) as nb FROM contacts WHERE '".$_SESSION['hisusername']."' = username_user2 AND '".$_SESSION['myusername']."' = username_user1"; 
+        $sql = "SELECT COUNT(*) as nb FROM contacts 
+        WHERE '".$_SESSION['hisusername']."' = username_user2 
+        AND '".$_SESSION['myusername']."' = username_user1 
+        AND connected = 0"; 
+        
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         $data = mysqli_fetch_assoc($result);
+        echo $data['nb'];
         if($data['nb']==0)
         {
             return false;
@@ -179,5 +183,35 @@ function iffriendasked()
 
         
 }}
+function ifIasked()
+{
+    $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+
+    if($db_found) {            
+        $sql = "SELECT COUNT(*) as nb FROM contacts 
+        WHERE '".$_SESSION['hisusername']."' = username_user1 
+        AND '".$_SESSION['myusername']."' = username_user2 
+        AND connected = 0"; 
+        
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        $data = mysqli_fetch_assoc($result);
+        echo $data['nb'];
+        if($data['nb']==0)
+        {
+            return false;
+        }
+            
+        else
+        {
+            return true;
+        }
+        
+        
+
+        
+}}
+
 
 ?>

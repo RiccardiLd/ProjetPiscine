@@ -2,7 +2,7 @@
 require 'action_home.php';
 require 'action_mynetwork.php';
 $_SESSION['hisusername'] = $_SESSION['myusername'];
-
+$_SESSION['count'] = 0;
 
 ?>
 
@@ -143,11 +143,7 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
                     ?>
 
                     <div class="">
-                        <p class="post-content">
-                            <img src="img/avatar.png" alt="postImg" class="profile-post">
-                            <?php echo posts() ?>
-                        </p>
-                        <p class="post-content"><?php echo posts() ?></p>
+                        <?php echo posts() ?>
                     </div>
                 </div>
                 <div class="right-pane">

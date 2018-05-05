@@ -1,26 +1,30 @@
 <?php
 session_start();
 
+
 function posts(){
     $database='linkedoff';
     $db_handle=mysqli_connect('localhost', 'root', 'root');       
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-        $sql = "SELECT u.first_name, u.last_name, p.text
+        $sql = "SELECT u.first_name, u.last_name, p.text, p.timestamp
 FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.username = u.username) OR (p.username != '".$_SESSION['myusername']."' AND (p.privacy = 'public' OR (p.privacy = 'contacts' AND ('".$_SESSION['myusername']."' = (SELECT c.username_user1 FROM contacts c WHERE c.username_user2 = p.username AND c.connected = 1 LIMIT 1) OR ('".$_SESSION['myusername']."' = (SELECT c.username_user2 FROM contacts c WHERE c.username_user1 = p.username AND c.connected = 1 LIMIT 1)))) OR ('".$_SESSION['myusername']."' = (SELECT g.username FROM group_member g WHERE g.group_id = p.privacy LIMIT 1)))AND u.username = p.username) ORDER BY p.timestamp DESC";
 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
 
         while($data = mysqli_fetch_assoc($result)) {
-        echo ' -   '.$data['first_name'].' '.$data['last_name'].'<br>';
-        echo $data['text'].'<br>'.'<br>';
+        echo "<h3>".$data['first_name']." ".$data['last_name']."</h3>";
+        echo "<p>".$data['timestamp']."</p>";
+        echo "<p>".$data['text']."</p>";
     }
 
     }
     else { echo "Base de données non trouvée."; }
 
     mysqli_close($db_handle);}
+
+
 
 
     

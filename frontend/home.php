@@ -111,9 +111,7 @@
                         <form method="post" class="search-form">
                             <input type="text" placeholder="Publiez.." tabindex="1" name="post">
                             <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/search-icon.png">  </button>
-                        </form>
-                    </div>
-                    <select name="Fonction">
+                            <select name="group">
 
           <option value="public">Public</option>
 
@@ -132,9 +130,12 @@
          <option value="public"></option>
 
      </select>
+                        </form>
+                    </div>
+                    
                       <?php 
                     if(isset($_POST['bouton'])){
-                     post($_POST['post']);
+                     post($_POST['post'],$_POST['group']);
                     }
                     ?>
                     

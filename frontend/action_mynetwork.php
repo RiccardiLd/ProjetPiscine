@@ -61,7 +61,6 @@ FROM users
 WHERE (first_name LIKE '".$var."%' OR last_name LIKE '".$var."%' OR '".$var."' = graduation)";
 
          $result = mysqli_query($db_handle, $sql) or die(mysql_error());
-
         while($data = mysqli_fetch_assoc($result)) {
         echo ' -   '.$data['nom'].'<br>';
         $_SESSION['hisusername'] = $data['username'];

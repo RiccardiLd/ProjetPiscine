@@ -101,7 +101,7 @@ require 'action_profile.php';
                     <h3>Profil</h3>
                     <?php myprofilepic() ?>
                     <?php $image = $_SESSION['profilepic']; 
-                        print '<img src="'.$image.'" alt="profile photo" />'; ?>
+                        print '<img src="'.$image.'" height="256" width="256" alt="profile photo" />'; ?>
                     <p><?php echo myinfos() ?></p>
                 </div>
                 <div class="main-pane">

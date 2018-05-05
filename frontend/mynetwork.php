@@ -105,13 +105,11 @@ require 'action_mynetwork.php';
 
                 <div id="Mes contacts" class="tabcontent">
                     <h3>Contacts</h3>
-                    <p>Affichage des contacts</p>
                     <p><?php mynetwork() ?></p>
                 </div>
 
                 <div id="Mes invitations" class="tabcontent">
                     <h3>Invitations</h3>
-                    <p>Affichage des invitations</p> 
                     <p><?php myrequests() ?></p>
                 </div>
 
@@ -124,7 +122,6 @@ require 'action_mynetwork.php';
                     </div>
 
                     <h3>Rechercher</h3>
-                    <p>Résultat de la recherche</p>
                   <p> <?php 
                     if(isset($_POST['bouton'])){
                      search($_POST['search']);

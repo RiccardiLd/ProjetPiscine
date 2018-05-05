@@ -14,9 +14,15 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
 
         while($data = mysqli_fetch_assoc($result)) {
-        echo "<h3>".$data['first_name']." ".$data['last_name']."</h3>";
-        echo "<p>".$data['timestamp']."</p>";
-        echo "<p>".$data['text']."</p>";
+        print '<h3 class="post-title">'.$data['first_name'].' '.$data['last_name'].'</h3>';
+        print '<p class="post-content"></p>';
+        print '<p class="post-content">'.$data['text'].'</p>';
+        print '<div class="post-bottom">
+                            <button onclick="" id="comment" class="submit-post" name="boutonComment"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
+                            <button onclick="" id="like" class="submit-post" name="boutonLike"><img class="icon" alt="Go" src="img/menu/like.png"></button>
+                            <button onclick="" id="share" class="submit-post" name="boutonShare"><img class="icon" alt="Go" src="img/menu/share.png"></button>
+               </div>';
+        print '<span class="time-left">'.$data['timestamp'].'</span>';
     }
 
     }

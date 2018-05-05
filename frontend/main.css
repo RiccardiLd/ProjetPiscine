@@ -315,6 +315,13 @@ input[type=text], input[type=password] {
     text-justify: inter-word;
     overflow: auto;
     padding: 5px 5px;
+}
+
+.post-title {
+    text-align: justify;
+    text-justify: inter-word;
+    overflow: auto;
+    padding: 5px 5px;
     border-top: 2px solid #888;
 }
 
@@ -325,6 +332,8 @@ input[type=text], input[type=password] {
 }
 
 .post {
+    display: flex;
+    flex-direction: column;
     background-color: #e2e2e2;
     overflow: scroll;
     border: 2px solid #888;
@@ -333,8 +342,33 @@ input[type=text], input[type=password] {
     margin-bottom: 10px;
 }
 
-
-
 .page-title {
     text-align: center;
+}
+
+.post-bottom {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.submit-post {
+    border: none;
+    background-color: transparent;
+    margin-bottom: 10px;
+    width: auto;
+    height: auto;
+}
+
+.submit-post:hover {
+    opacity: 0.7;
+}
+
+.time-left {
+    font-size: small;
+    position: relative;
+    bottom: 2px;
+    left: 2px;
+    float: left;
+    color: #aaa;
 }

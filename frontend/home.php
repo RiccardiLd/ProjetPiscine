@@ -1,7 +1,7 @@
 <?php
-    session_start();
-    require 'action_home.php';
-    require 'action_mynetwork.php';
+session_start();
+require 'action_home.php';
+require 'action_mynetwork.php';
 ?>
 
 <!DOCTYPE html>
@@ -100,47 +100,47 @@
             <div class="central-wrapper">
                 <div class="left-pane">
                     <h3>Contacts</h3>
-                     <p><?php mynetwork() ?></p>
-                    
+                    <p><?php mynetwork() ?></p>
+
                 </div>
                 <div class="main-pane">
-                    
-                    
-                    
+
+
+
                     <div class="search-container">
                         <form method="post" class="search-form">
                             <input type="text" placeholder="Publiez.." tabindex="1" name="post">
-                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/search-icon.png">  </button>
+                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
                             <select name="group">
 
-          <option value="public">Public</option>
+                                <option value="public">Public</option>
 
-          <option value="contacts">Contacts</option>
+                                <option value="contacts">Contacts</option>
 
-          <option value="public"></option>
-        
-        <option value="public"></option>
+                                <option value="public"></option>
 
-          <option value="public"></option>
+                                <option value="public"></option>
 
-          <option value="public"></option>
+                                <option value="public"></option>
 
-          <option value="public"></option>
+                                <option value="public"></option>
 
-         <option value="public"></option>
+                                <option value="public"></option>
 
-     </select>
+                                <option value="public"></option>
+
+                            </select>
                         </form>
                     </div>
-                    
-                      <?php 
-                    if(isset($_POST['bouton'])){
-                     post($_POST['post'],$_POST['group']);
-                    }
-                    ?>
-                    
 
-                    
+                    <?php 
+    if(isset($_POST['bouton'])){
+        post($_POST['post'],$_POST['group']);
+    }
+                    ?>
+
+
+
                     <p><?php echo posts() ?></p>
                 </div>
                 <div class="right-pane">

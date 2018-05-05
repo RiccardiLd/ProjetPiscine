@@ -122,11 +122,11 @@ require 'action_mynetwork.php';
                     </div>
 
                     <h3>Rechercher</h3>
-                  <p> <?php 
-                    if(isset($_POST['bouton'])){
-                     search($_POST['search']);
-                    }
-                    ?>
+                    <p> <?php 
+    if(isset($_POST['bouton'])){
+        search($_POST['search']);
+    }
+                        ?>
                     </p>
                 </div>
             </div>

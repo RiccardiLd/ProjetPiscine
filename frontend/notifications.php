@@ -1,6 +1,8 @@
 <?php
 session_start();
 require 'action_notifications.php';
+$_SESSION['hisusername'] = $_SESSION['myusername'];
+
 ?>
 <!DOCTYPE html>
 <html>

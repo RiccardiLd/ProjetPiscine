@@ -121,17 +121,6 @@ $_SESSION['convId']=1;
 
                                 <option value="contacts">Contacts</option>
 
-                                <option value="public"></option>
-
-                                <option value="public"></option>
-
-                                <option value="public"></option>
-
-                                <option value="public"></option>
-
-                                <option value="public"></option>
-
-                                <option value="public"></option>
 
                             </select>
                         </form>

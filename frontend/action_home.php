@@ -18,10 +18,6 @@ FROM posts p, users u, comments com WHERE (p.post_id = com.post_id) AND (com.use
         
 
         $result2 = mysqli_query($db_handle, $sql2) or die(mysql_error());
-
-        while($data2 = mysqli_fetch_assoc($result2)) {
-            echo $data2['first_name'].' '.$data2['last_name'].' '.$data2['time'].' '.$data2['content'];
-        }
         
         
         while($data = mysqli_fetch_assoc($result)) {
@@ -41,7 +37,10 @@ FROM posts p, users u, comments com WHERE (p.post_id = com.post_id) AND (com.use
                     <span onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
                     print '" class="close" title="Close Modal">&times;</span>
                 </div>';
-                
+                while($data2 = mysqli_fetch_assoc($result2)) {
+                    print '<h4 class="post-title">'.$data2['first_name'].' '.$data['last_name'].' a commenté :</h4>';
+                    print '<p class="comment-content">'.$data2['content'].'<span class="time-right">'.$data2['time'].'</span></p>';
+                }
                 print '
                 <div class="container">
                     <label for="uname"><b>Votre commentaire :</b></label>

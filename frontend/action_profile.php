@@ -8,7 +8,7 @@ $db_found=mysqli_select_db($db_handle,$database);
 
 if($db_found) {            
     $sql = "SELECT u.first_name, u.last_name, p.text
-FROM posts p, users u WHERE p.username = '".$_SESSION['myusername']."' AND p.username = u.username ORDER BY p.timestamp DESC"; 
+FROM posts p, users u WHERE p.username = '".$_SESSION['hisusername']."' AND p.username = u.username ORDER BY p.timestamp DESC"; 
     $result = mysqli_query($db_handle, $sql) or die(mysql_error());
     
     while($data = mysqli_fetch_assoc($result)) {
@@ -26,7 +26,7 @@ function bio($var)
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {  
-        $sql =  "UPDATE users SET summary = '".$var."' WHERE username = '".$_SESSION['myusername']."'";
+        $sql =  "UPDATE users SET summary = '".$var."' WHERE username = '".$_SESSION['hisusername']."'";
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
         
@@ -42,13 +42,13 @@ function myinfos() {
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-        $sql = "SELECT * FROM users WHERE username = '".$_SESSION['myusername']."'"; 
+        $sql = "SELECT * FROM users WHERE username = '".$_SESSION['hisusername']."'"; 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
     
         $data = mysqli_fetch_assoc($result);
         echo '<br>'.$data['username'].'<br>'.'<br>'.$data['first_name'].' '.$data['last_name'].'<br>'.'<br>'.$data['email'].'<br>'.'<br>'.'Promo '.$data['graduation'].'<br>'.'<br>'.'<br>'.$data['summary'].'<br>'.'<br>'.'<br>';
         
-        $sql = "SELECT concat (skill,' (', skill_level,')') AS sk FROM skills WHERE username = '".$_SESSION["myusername"]."'";
+        $sql = "SELECT concat (skill,' (', skill_level,')') AS sk FROM skills WHERE username = '".$_SESSION["hisusername"]."'";
 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
 
@@ -66,7 +66,7 @@ function myprofilepic() {
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-        $sql = "SELECT profile_photo FROM users WHERE username = '".$_SESSION['myusername']."'"; 
+        $sql = "SELECT profile_photo FROM users WHERE username = '".$_SESSION['hisusername']."'"; 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
     
         $data = mysqli_fetch_assoc($result);

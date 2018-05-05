@@ -56,7 +56,7 @@ function search($var){
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-       $sql = "SELECT concat (first_name,' ', last_name) AS nom
+       $sql = "SELECT username, concat (first_name,' ', last_name) AS nom
 FROM users
 WHERE (first_name LIKE '".$var."%' OR last_name LIKE '".$var."%' OR '".$var."' = graduation)";
 
@@ -64,6 +64,7 @@ WHERE (first_name LIKE '".$var."%' OR last_name LIKE '".$var."%' OR '".$var."' =
 
         while($data = mysqli_fetch_assoc($result)) {
         echo ' -   '.$data['nom'].'<br>';
+        $_SESSION['hisusername'] = $data['username'];
     }
 
     }

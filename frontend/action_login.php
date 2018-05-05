@@ -15,6 +15,7 @@ if($db_found) {
     
     if($psw == $_POST["psw"]) {
         $_SESSION['myusername'] = $_POST["uname"];
+        $_SESSION['hisusername'] = $_POST["uname"];
         header("Location:home.php");
         echo "ok";
     }

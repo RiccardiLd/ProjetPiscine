@@ -20,6 +20,7 @@ if($db_found) {
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
         $_SESSION['myusername'] = $_POST["username"];
+        $_SESSION['hisusername'] = $_POST["username"];
         header("Location:home.php");
         echo "ok";
     }

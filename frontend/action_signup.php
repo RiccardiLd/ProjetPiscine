@@ -13,7 +13,7 @@ if($db_found) {
     }
     
     if(empty($uname)) {
-        $sql =  "INSERT INTO users(username, email, password, first_name, last_name, profile_photo, summary, status, graduation) VALUES('".$_POST["username"]."','".$_POST["email"]."','".$_POST["session_password"]."','".$_POST["firstName"]."','".$_POST["lastName"]."','','','normal user',null)";
+        $sql =  "INSERT INTO users(username, email, password, first_name, last_name, profile_photo, summary, status, graduation) VALUES('".$_POST["username"]."','".$_POST["email"]."','".$_POST["session_password"]."','".$_POST["firstName"]."','".$_POST["lastName"]."','img/avatar.png','','normal user',null)";
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
         $sql =  "INSERT INTO contacts(username_user1, username_user2, type, connected, timestamp) VALUES('ECE','".$_POST["username"]."','professional',1,NOW())";

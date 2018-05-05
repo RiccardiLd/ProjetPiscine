@@ -99,9 +99,13 @@ require 'action_profile.php';
             <div class="central-wrapper">
                 <div class="left-pane">
                     <h3>Profil</h3>
+                    <?php myprofilepic() ?>
+                    <?php $image = $_SESSION['profilepic']; 
+                        print '<img src="'.$image.'" alt="profile photo" />'; ?>
                     <p><?php echo myinfos() ?></p>
                 </div>
                 <div class="main-pane">
+                    <h3>Mes Publications</h3>
                     <p><?php echo myposts() ?></p>
                 </div>
                 <div class="right-pane">

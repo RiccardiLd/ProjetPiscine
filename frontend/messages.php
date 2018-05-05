@@ -100,7 +100,23 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
             <div class="central-wrapper">
                 <div class="left-pane">
                     <h3>Conversations</h3>
-                    <p><?php echo conv_names()?></p>
+                     <form method="post" class="search-form">
+                            <button type="submit" class="submit-search" name = "bouton2"><img class="icon" alt="Go" src="img/menu/go-button.png"></button>
+                            <select name="conv">
+                                <?php 
+                                numconv()
+                                ?>
+                                <!--Dans notes-->
+
+
+                            </select>
+                        </form>
+                    
+                    <p><?php 
+                        if(isset($_POST['bouton2'])){
+        actual_conv($_POST['conv']);
+    }
+                        echo conv_names()?></p>
                     
                 </div>
                 <div class="main-pane">
@@ -109,22 +125,13 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
                         <form method="post" class="search-form">
                             <input type="text" placeholder="Écrivez" tabindex="1" name="message">
                             <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Go" src="img/menu/go-button.png"></button>
-                            <select name="contact">
-
-                                <option value="1">Linkedoff Masters</option>
-
-                                <option value="2">Deuxieme Conv</option>
-
-                                <option value="3">TROIZ</option>
-
-
-                            </select>
+                           
                         </form>
                     </div>
 
                     <?php 
     if(isset($_POST['bouton'])){
-        write($_POST['message'],$_POST['contact']);
+        write($_POST['message']);
     }
                     ?>
                 </div>

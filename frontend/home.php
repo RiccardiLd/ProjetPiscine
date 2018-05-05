@@ -109,11 +109,11 @@ $_SESSION['convId']=1;
                 </div>
                 <div class="main-pane">
 
-
-
+                    
                     <div class="search-container">
                         <form method="post" class="search-form">
                             <input class="" type="text" placeholder="Publiez.." tabindex="1" name="post">
+                            <input class="" type="text" placeholder="Image.." tabindex="1" name="postimg">
                             <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Go" src="img/menu/go-button.png"></button>
                             <select name="group">
 

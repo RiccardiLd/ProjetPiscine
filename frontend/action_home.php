@@ -22,8 +22,8 @@ FROM posts p, users u, users v, comments com WHERE (p.username = '".$_SESSION['m
         
         while($data = mysqli_fetch_assoc($result)) {
         print '<h3 class="post-title">'.$data['first_name'].' '.$data['last_name'].'</h3>';
-        print '<p class="post-content"></p>';
-        print '<p class="post-content">'.$data['text'].'</p>';
+        print '';
+        print '<p class="post-content">'.$data['text'].'<img class="profile-post" alt="no-img" src="img/noimg.png"></p>';
         print '<div class="post-bottom">
                             <button onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='block'";
                             print '" name="comment" class="submit-post" id=""><img class="icon" alt="Go" src="img/menu/list-with-dots.png"></button>

@@ -146,7 +146,6 @@ $_SESSION['convId']=1;
                     <div class="post">
                         <h2 class="page-title">Mon fil d'actualités</h2>
                         <?php echo posts() ?>
-                        
                     </div>
                 </div>
                 <div class="right-pane">

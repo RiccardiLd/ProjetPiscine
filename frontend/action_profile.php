@@ -104,6 +104,16 @@ function friend_request()
                                     VALUES ('', null, 'invite','0', NOW(), '".$_SESSION["myusername"]."','".$_SESSION['hisusername']."')";
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+       
+        $nameconv = $_SESSION["hisusername"]." ".$_SESSION["myusername"];
+        
+        $sql = "INSERT INTO conversations VALUES ('', '".$nameconv."')";
+        
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        
+        //$sql = "INSERT INTO member VALUES ((SELECT con, '".$nameconv."')";
+        
+       // $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
 
         
@@ -113,7 +123,7 @@ function friend_request_accept()
     $database='linkedoff';
     $db_handle=mysqli_connect('localhost', 'root', 'root');       
     $db_found=mysqli_select_db($db_handle,$database);
-
+    
     if($db_found) {            
         $sql = "UPDATE contacts SET connected = 1
         WHERE '".$_SESSION["hisusername"]."' = username_user2 

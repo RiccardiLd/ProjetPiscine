@@ -110,7 +110,7 @@ $_SESSION['convId']=1;
                     <p><?php echo myposts() ?></p>
                 </div>
                 <div class="right-pane">
-                    <h3>Modifier le profil</h3>
+                    <h4>Modifier le profil</h4>
                     <p>Réécrire sa bio</p>
                     <div class="search-container">
                         <form method="post" class="search-form">

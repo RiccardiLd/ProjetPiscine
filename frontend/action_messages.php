@@ -37,7 +37,7 @@ ORDER BY m.timestamp DESC";
 
          $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         while($data = mysqli_fetch_assoc($result)) {
-            echo $data['first_name'];
+            echo "<p>  '".$data['first_name']."'  </p>";
             echo " ";
             echo $data['last_name'];
             echo " : '";
@@ -53,4 +53,20 @@ ORDER BY m.timestamp DESC";
 
     mysqli_close($db_handle);}
 
+function write($var,$group)
+{   
+    $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+    $$_SESSION['convId'] = $group;
+    if($db_found) {            
+       $sql =  "INSERT INTO `messages` (`message_id`, `conv_id`, `username`, `content`, `timestamp`) VALUES (NULL, '".$group."', '".$_SESSION['myusername']."', '".$var."', NOW())";
+        
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+          
+    }
+    else { echo "Base de données non trouvée."; }
+
+    mysqli_close($db_handle);
+}
 ?>

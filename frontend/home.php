@@ -3,6 +3,7 @@ require 'action_home.php';
 require 'action_mynetwork.php';
 $_SESSION['hisusername'] = $_SESSION['myusername'];
 $_SESSION['count'] = 0;
+$_SESSION['convId']=1;
 
 ?>
 

@@ -2,6 +2,7 @@
 session_start();
 require 'action_notifications.php';
 $_SESSION['hisusername'] = $_SESSION['myusername'];
+$_SESSION['convId']=1;
 
 ?>
 <!DOCTYPE html>

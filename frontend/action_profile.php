@@ -128,18 +128,14 @@ function friend_request_accept()
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
-        $sql = "INSERT INTO member VALUES ((SELECT conv_id FROM conversations WHERE 1 ORDER BY conv_id DESC LIMIT 1), '".$_SESSION["myusername"]."'";
+        $sql = "INSERT INTO member VALUES ((SELECT conv_id FROM conversations WHERE 1 ORDER BY conv_id DESC LIMIT 1), '".$_SESSION["myusername"]."')";
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
-        $sql = "INSERT INTO member VALUES ((SELECT conv_id FROM conversations WHERE 1 ORDER BY conv_id DESC LIMIT 1), '".$_SESSION["hisusername"]."'";
+        $sql = "INSERT INTO member VALUES ((SELECT conv_id FROM conversations WHERE 1 ORDER BY conv_id DESC LIMIT 1), '".$_SESSION["hisusername"]."')";
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
-        
-        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
-        
-
-        
+               
 }}
 
 function ifalreadyfriend()
@@ -181,7 +177,7 @@ function iffriendasked()
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         $data = mysqli_fetch_assoc($result);
-        echo $data['nb'];
+       
         if($data['nb']==0)
         {
             return false;
@@ -226,5 +222,19 @@ function ifIasked()
         
 }}
 
-
+function skills($skill, $niv)
+{
+   
+     $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+    
+    if($db_found) {            
+        $sql = "INSERT INTO skills
+                                    VALUES ('', '".$_SESSION['myusername']."','".$skill."','".$niv."')";
+        
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+    }
+        
+}
 ?>

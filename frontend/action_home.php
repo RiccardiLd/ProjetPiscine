@@ -36,7 +36,9 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
                     <label for="uname"><b>Votre commentaire :</b></label>
                     <input type="text" placeholder="Entrez ici votre commentaire" name="uname" required>
                 </div>
-
+                
+                <input type="text" name="post_id" value="'.$data['post_id'].'"readonly>
+                
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" "'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
                     print '" class="cancelbtn" value="annuler">Annuler</button>

@@ -142,8 +142,12 @@ $_SESSION['count'] = 0;
     }
                     ?>
 
-                    <div class="">
-                        <?php echo posts() ?>
+                    <div class="post">
+                        <h3 class="page-title">Mon fil d'actualités</h3>
+                        <p class="post-content">
+                            <img src="img/avatar.png" alt="postImg" class="profile-post">
+                            <?php echo posts() ?>
+                        </p>
                     </div>
                 </div>
                 <div class="right-pane">

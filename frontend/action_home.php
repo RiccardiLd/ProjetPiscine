@@ -87,4 +87,23 @@ function skills(){
 
     mysqli_close($db_handle);}
     
+function post($var)
+{
+    $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+
+    if($db_found) {            
+       $sql =  "INSERT INTO posts(post_id, username, privacy, type, text, content, timestamp, id_shared_post) VALUES('','".$_SESSION["myusername"]."','public',null,'".$var."','null',NOW(),null)";
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+
+        while($data = mysqli_fetch_assoc($result)) {
+        echo ' -   '.$data['nom'].'<br>';
+    }
+
+    }
+    else { echo "Base de données non trouvée."; }
+
+    mysqli_close($db_handle);
+}
 ?>

@@ -40,6 +40,10 @@ WHERE n.user_receive = '".$_SESSION['myusername']."' AND n.user_create = u.usern
         {
             echo "a accepter votre demande le ";
         }
+            else if($data['type']=='share')
+        {
+            echo "a partagé votre publication le ";
+        }
         echo $data['timestamp'];
         echo '<br>';
             

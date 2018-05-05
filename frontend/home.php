@@ -102,6 +102,29 @@
                     <p>Affichage de la liste d'amis</p>
                 </div>
                 <div class="main-pane">
+                    
+                    
+                    
+                    <div class="search-container">
+                        <form method="post" class="search-form">
+                            <input type="text" placeholder="Publiez.." tabindex="1" name="post">
+                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/search-icon.png">  </button>
+                        </form>
+                    </div>
+                      <?php 
+                    if(isset($_POST['bouton'])){
+                     post($_POST['post']);
+                    }
+                    ?>
+                    
+
+                  
+                  
+               
+                    
+                    
+                    
+                    
                     <p><?php echo posts() ?></p>
                 </div>
                 <div class="right-pane">

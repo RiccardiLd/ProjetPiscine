@@ -54,6 +54,8 @@
                     <input type="text" name="username" class="reg-username" tabindex="1" id="reg-username" aria-required="true" required>
                     <label for="reg-email">Email</label>
                     <input type="text" name="email" class="reg-email" autocapitalize="off" tabindex="1" id="reg-email" aria-required="true" autofocus="autofocus" required>
+                    <label for="reg-graduation">Promo</label>
+                    <input type="text" name="graduation" id="reg-graduation" class="reg-graduation" aria-required="true" tabindex="1" placeholder="" required>
                     <label for="reg-password">Mot de passe (8 caractères minimum)</label>
                     <input type="password" name="session_password" class="reg-password" id="reg-password" aria-required="true" tabindex="1" autocomplete="new-password" onkeyup="checkPasswordMatch()" required>
                     <label for="reg-password">Confirmez le mot de passe</label>

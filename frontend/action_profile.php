@@ -135,7 +135,7 @@ function friend_request_accept()
         $sql = "INSERT INTO member VALUES ((SELECT conv_id FROM conversations WHERE 1 ORDER BY conv_id DESC LIMIT 1), '".$_SESSION["hisusername"]."')";
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
-               
+
 }}
 
 function ifalreadyfriend()

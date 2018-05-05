@@ -18,11 +18,32 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
         print '<p class="post-content"></p>';
         print '<p class="post-content">'.$data['text'].'</p>';
         print '<div class="post-bottom">
-                            <button onclick="" name="comment" class="submit-post" id="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
+                            <button onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='block'";
+                            print '" name="comment" class="submit-post" id="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
                             <button onclick="" name="like" class="submit-post" id="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/like.png"></button>
                             <button onclick="" name="share" class="submit-post" id="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/share.png"></button>
                </div>';
         print '<span class="time-left">'.$data['timestamp'].'</span>';
+        print '<div id="'.$data['post_id'].'" class="modal">
+
+            <form class="modal-content animate" action="/action_comment.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
+                    print '" class="close" title="Close Modal">&times;</span>
+                </div>
+                
+                <div class="container">
+                    <label for="uname"><b>Votre commentaire :</b></label>
+                    <input type="text" placeholder="Entrez ici votre commentaire" name="uname" required>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" "'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
+                    print '" class="cancelbtn" value="annuler">Annuler</button>
+                    <button type="submit" name="post-comment" class="postbtn">Commenter</button> 
+                </div>
+            </form>
+        </div>';
     }
 
     }

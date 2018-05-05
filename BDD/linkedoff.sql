@@ -240,8 +240,13 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
  ('JoVieira','joel.vieira@edu.ece.fr','cykablyat2','Joel','Vieira','','','admin'),
  ('Reinim','theo.minier@edu.ece.fr','cykablyat3','Théo','Minier','','','admin');
 
--- INSERT INTO `posts` (`post_id`,`username`,`privacy`,`type`,`text`,`content`,`timestamp`,`id_shared_post`) VALUES
--- ('','','','','','','','');
+ INSERT INTO `posts` (`username`,`privacy`,`type`,`text`,`content`,`timestamp`,`id_shared_post`) VALUES
+ ('ECE','public','emploi','Offre de CDD - AXA','NULL','NOW()','NULL');
+ ('ECE','public','emploi','Offre de stage - Société Générale','NULL','NOW()','NULL');
+ ('ECE','public','emploi','Offre de CDD - Google','NULL','NOW()','NULL');
+ ('ECE','public','emploi','Offre de stage - Microsoft','NULL','NOW()','NULL');
+ ('ECE','public','emploi','Offre de stage - Apple','NULL','NOW()','NULL');
+ ('ECE','public','emploi','Offre de stage - ECE','NULL','NOW()','NULL');
 
  INSERT INTO `contacts` (`username_user1`,`username_user2`,`type`,`connected`,`timestamp`) VALUES
  ('ECE','RiccardiLd','','1','2018-04-20 13:23:44'),

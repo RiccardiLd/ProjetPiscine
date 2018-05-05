@@ -142,7 +142,8 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
     }
                     ?>
 
-                    <div class="">
+                    <div class="post">
+                        <h3 class="page-title">Mon fil d'actualités</h3>
                         <p class="post-content">
                             <img src="img/avatar.png" alt="postImg" class="profile-post">
                             <?php echo posts() ?>

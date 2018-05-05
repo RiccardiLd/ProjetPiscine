@@ -33,7 +33,7 @@ AND m.username = mem.username
 AND c.conv_id = m.conv_id
 AND mem.conv_id = c.conv_id
 AND mem.conv_id = '".$_SESSION['convId']."'
-ORDER BY m.timestamp DESC";
+ORDER BY m.timestamp ASC";
 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         $data = mysqli_fetch_assoc($result);

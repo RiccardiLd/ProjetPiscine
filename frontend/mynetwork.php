@@ -106,23 +106,31 @@ require 'action_mynetwork.php';
                 <div id="Mes contacts" class="tabcontent">
                     <h3>Contacts</h3>
                     <p>Affichage des contacts</p>
+                    <p><?php mynetwork() ?></p>
                 </div>
 
                 <div id="Mes invitations" class="tabcontent">
                     <h3>Invitations</h3>
                     <p>Affichage des invitations</p> 
+                    <p><?php myrequests() ?></p>
                 </div>
 
                 <div id="Rechercher" class="tabcontent">
                     <div class="search-container">
-                        <form action="action_search.php" class="search-form">
+                        <form method="post" class="search-form">
                             <input type="text" placeholder="Recherche.." tabindex="1" name="search">
-                            <button type="submit" class="submit-search"><img class="icon" alt="Search" src="img/menu/search-icon.png"></button>
+                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/search-icon.png">  </button>
                         </form>
                     </div>
 
                     <h3>Rechercher</h3>
                     <p>Résultat de la recherche</p>
+                  <p> <?php 
+                    if(isset($_POST['bouton'])){
+                     search($_POST['search']);
+                    }
+                    ?>
+                    </p>
                 </div>
             </div>
 

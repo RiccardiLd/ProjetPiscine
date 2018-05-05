@@ -90,4 +90,48 @@ else { echo "Base de données non trouvée."; }
 mysqli_close($db_handle);
 }
 
+function friend_request()
+{
+    $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+
+    if($db_found) {            
+        $sql = "INSERT INTO contacts VALUES('".$_SESSION['hisusername']."','".$_SESSION['myusername']."', 'friend', '0', NOW())"; 
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+       
+         $sql = "INSERT INTO notifications (notif_id, parent_id, type, seen, timestamp, user_create, user_receive)
+                                    VALUES ('', null, 'invite','0', NOW(), '".$_SESSION["myusername"]."','".$_SESSION['hisusername']."')";
+        
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        
+
+        
+}}
+
+function ifalreadyfriend()
+{
+    $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+
+    if($db_found) {            
+        $sql = "SELECT COUNT(*) as nb FROM contacts WHERE '".$_SESSION['hisusername']."' = username_user1 AND '".$_SESSION['myusername']."' = username_user2"; 
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        $data = mysqli_fetch_assoc($result);
+        if($data['nb']==0)
+        {
+            return false;
+        }
+            
+        else
+        {
+            return true;
+        }
+        
+        
+
+        
+}}
+
 ?>

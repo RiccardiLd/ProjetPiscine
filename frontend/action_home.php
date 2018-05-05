@@ -32,16 +32,14 @@ FROM posts p, users u, users v, comments com WHERE (p.username = '".$_SESSION['m
         print '<span class="time-left">'.$data['timestamp'].'</span>';
         print '<div id="'.$data['post_id'].'" class="modal">
 
-            <form class="modal-content animate" action="/action_comment.php" method="post">
+           <form class="modal-content animate" action="/action_comment.php" method="post">
                 <div class="imgcontainer">
                     <span onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
                     print '" class="close" title="Close Modal">&times;</span>
                 </div>';
                 while($data2 = mysqli_fetch_assoc($result2)) {
-                    if ($data2['post_id'] == $data['post_id']) {
-                        print '<h4 class="post-title">'.$data2['first_name'].' '.$data2['last_name'].' a commenté :</h4>';
-                        print '<p class="comment-content">'.$data2['content'].'<span class="time-right">'.$data2['time'].'</span></p>';
-                    }
+                    print '<h4 class="post-title">'.$data2['first_name'].' '.$data2['last_name'].' a commenté :</h4>';
+                    print '<p class="comment-content">'.$data2['content'].'<span class="time-right">'.$data2['time'].'</span></p>';
                 }
                 print '
                 <div class="container">
@@ -59,6 +57,9 @@ FROM posts p, users u, users v, comments com WHERE (p.username = '".$_SESSION['m
                     <button type="submit" formaction="/action_share.php" name="share" class="submit-post" id=""><img class="icon" alt="share" src="img/menu/share.png"></button>
                 </div>
             </form>
+
+
+
         </div>';
     }
 

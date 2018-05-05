@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'action_jobs.php';
 ?>
 
 <!DOCTYPE html>
@@ -97,28 +98,28 @@ session_start();
 
             <div class="job-pane">
                 <div class="job-item">
-                    <h3>Emploi 1</h3>
-                    <p>Affichage des spécifications</p> 
+                    <h3><?php echo name(0) ?></h3>
+                    <p><?php echo jobs(0) ?></p> 
                 </div>
                 <div class="job-item">
-                    <h3>Emploi 2</h3>
-                    <p>Affichage des spécifications</p> 
+                    <h3><?php echo name(1) ?></h3>
+                    <p><?php echo jobs(1) ?></p> 
                 </div>
                 <div class="job-item">
-                    <h3>Emploi 3</h3>
-                    <p>Affichage des spécifications</p>  
+                    <h3><?php echo name(2) ?></h3>
+                    <p><?php echo jobs(2) ?></p> 
                 </div>
                 <div class="job-item">
-                    <h3>Emploi 4</h3>
-                    <p>Affichage des spécifications</p>  
+                    <h3><?php echo name(3) ?></h3>
+                    <p><?php echo jobs(3) ?></p> 
                 </div>
                 <div class="job-item">
-                    <h3>Emploi 5</h3>
-                    <p>Affichage des spécifications</p> 
+                    <h3><?php echo name(4) ?></h3>
+                    <p><?php echo jobs(4) ?></p> 
                 </div>
                 <div class="job-item">
-                    <h3>Emploi 6</h3>
-                    <p>Affichage des spécifications</p> 
+                    <h3><?php echo name(5) ?></h3>
+                    <p><?php echo jobs(5) ?></p> 
                 </div>
             </div>
 

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'action_profile.php';
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +102,7 @@ session_start();
                     <p>Affichage du profil</p>
                 </div>
                 <div class="main-pane">
-
+                    <p><?php echo myposts() ?></p>
                 </div>
                 <div class="right-pane">
                     <h3>Statistiques</h3>

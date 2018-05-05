@@ -6,8 +6,7 @@ function notifications(){
 
     if($db_found) {            
         $sql = "SELECT u.first_name, u.last_name, n.timestamp, n.type
-FROM users u, notifications n
-WHERE n.user_receive = '".$_SESSION['myusername']."' AND n.user_create = u.username";
+FROM users u, notifications n WHERE n.user_receive = '".$_SESSION['myusername']."' AND n.user_create = u.username ORDER BY n.timestamp DESC";
        
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
       

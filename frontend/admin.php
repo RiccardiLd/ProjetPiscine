@@ -1,19 +1,19 @@
+<?php
+require action_admin.php;
+?>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
-        <title>LinkedOff: Log In or Sign Up</title>
-        
-        
+        <title>LinkedOff: Admin</title>
+        <link rel="icon" href="img/linkedoff_favicon.png">
+        <link href="login.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div class=global-wrapper>
             
-
-            
-
             <form id="regForm" class="reg-form" action="/action_signup.php" method="POST">
-                <h2 class="title">Inscrire une personne</h2>
+                <h2 class="title">Inscrire quelqu'un</h2>
 
                 <section class="form-body">
                     <label for="reg-firstname">Prénom</label>
@@ -30,10 +30,30 @@
                     <input type="password" name="session_password" class="reg-password" id="reg-password" aria-required="true" tabindex="1" autocomplete="new-password" onkeyup="checkPasswordMatch()" required>
                     <label for="reg-password">Confirmez le mot de passe</label>
                     <input type="password" name="session_password" class="reg-password" id="reg-password-confirm" aria-required="true" tabindex="1" autocomplete="new-password" onkeyup="checkPasswordMatch()" required>
-                    <input tabindex="4" id="registration-submit" class="registration submit-button" type="submit" name="signup" value="S'inscrire">
+                    <input tabindex="4" id="registration-submit" class="registration submit-button" type="submit" name="signup" value="Inscrire">
                 </section>
             </form>
+           
         </div>
+        
+        <div class=global-wrapper>
+            
+            <form id="regForm" class="reg-form" action="/action_signup.php" method="POST">
+                <h2 class="title">Supprimer quelqu'un</h2>
+
+                <section class="form-body">
+                    <label for="reg-firstname">Username</label>
+                    <input type="text" name="username" id="reg-firstname" class="reg-firstname" aria-required="true" tabindex="1" placeholder="" required>
+                    
+                    <input tabindex="4" id="registration-submit" class="registration submit-button" type="submit" name="delete" value="Supprimer">
+                </section>
+            </form>
+            <?php if(isset($_POST['Supprimer'])){
+        delete($_POST['username']);
+    }?>
+        </div>
+        
+        
 
         <div class="footer">
             <div class="copyright">

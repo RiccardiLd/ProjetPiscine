@@ -2,7 +2,7 @@
 session_start();
 require 'action_messages.php'; 
 $_SESSION['hisusername'] = $_SESSION['myusername'];
-$_SESSION['convId']=1;
+
 
 ?>
 
@@ -106,6 +106,28 @@ $_SESSION['convId']=1;
                 </div>
                 <div class="main-pane">
                         <p><?php messages() ?></p>
+                        <div class="search-container">
+                        <form method="post" class="search-form">
+                            <input type="text" placeholder="Écrivez" tabindex="1" name="message">
+                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Go" src="img/menu/go-button.png"></button>
+                            <select name="contact">
+
+                                <option value="1">Linkedoff Masters</option>
+
+                                <option value="2">Deuxieme Conv</option>
+
+                                <option value="3">TROIZ</option>
+
+
+                            </select>
+                        </form>
+                    </div>
+
+                    <?php 
+    if(isset($_POST['bouton'])){
+        write($_POST['message'],$_POST['contact']);
+    }
+                    ?>
                 </div>
                 <div class="right-pane">
                     <h3>Membres</h3>

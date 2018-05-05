@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'action_profile.php';
+$_SESSION['convId']=1;
 ?>
 
 <!DOCTYPE html>

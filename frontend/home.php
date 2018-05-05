@@ -99,7 +99,7 @@
 
             <div class="central-wrapper">
                 <div class="left-pane">
-                    <h3>Amis</h3>
+                    <h3>Contacts</h3>
                      <p><?php mynetwork() ?></p>
                     
                 </div>
@@ -139,12 +139,6 @@
                     ?>
                     
 
-                  
-                  
-               
-                    
-                    
-                    
                     
                     <p><?php echo posts() ?></p>
                 </div>

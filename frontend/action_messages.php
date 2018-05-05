@@ -69,10 +69,12 @@ function write($var)
 
     mysqli_close($db_handle);
 }
+
 function actual_conv($conv)
 {
     $_SESSION['convId'] = $conv;
 }
+
 function numconv()
 {
     $database='linkedoff';
@@ -81,19 +83,20 @@ function numconv()
     //$_SESSION['convId'] = $group;
 
     if($db_found) {            
-        $sql =  "SELECT c.title FROM conversations c, member m
+        $sql =  "SELECT c.title, c.conv_id FROM conversations c, member m
 WHERE m.username = '".$_SESSION['myusername']."' 
 AND c.conv_id = m.conv_id";
-        $i=1;
+        ///$i=1;
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         while($data = mysqli_fetch_assoc($result)) {
             /* <option value="2"><?php numconv(1)?></option>*/
-            echo "<option value = '".$i."' > ".$data['title']." </option>";
-            $i++;
+            echo "<option value = '".$data['conv_id']." ' > ".$data['title']." </option>";
+            //$i++;
             
         }
 
-    }}
+    }
+}
 
 function show_members()
 {

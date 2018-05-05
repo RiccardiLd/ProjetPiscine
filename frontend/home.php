@@ -142,9 +142,13 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
     }
                     ?>
 
-
-                    <p class="post-content"><img src="img/avatar.png" alt="postImg" class="profile-post"><?php echo posts() ?></p>
-                    <p class="post-content"><?php echo posts() ?></p>
+                    <div class="">
+                        <p class="post-content">
+                            <img src="img/avatar.png" alt="postImg" class="profile-post">
+                            <?php echo posts() ?>
+                        </p>
+                        <p class="post-content"><?php echo posts() ?></p>
+                    </div>
                 </div>
                 <div class="right-pane">
                     <h3>Mes statistiques</h3>

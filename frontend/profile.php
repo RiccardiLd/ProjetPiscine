@@ -99,7 +99,7 @@ require 'action_profile.php';
             <div class="central-wrapper">
                 <div class="left-pane">
                     <h3>Profil</h3>
-                    <p>Affichage du profil</p>
+                    <p><?php echo myinfos() ?></p>
                 </div>
                 <div class="main-pane">
                     <p><?php echo myposts() ?></p>

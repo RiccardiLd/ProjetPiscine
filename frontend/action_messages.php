@@ -94,4 +94,33 @@ AND c.conv_id = m.conv_id";
         }
 
     }}
+
+function show_members()
+{
+    $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+    //$_SESSION['convId'] = $group;
+
+    if($db_found) {            
+        $sql =  "SELECT concat (u.first_name,' ', u.last_name) as nom
+        FROM conversations c, member m, users u
+        WHERE c.conv_id = '".$_SESSION['convId']."'
+        AND c.conv_id = m.conv_id
+        AND m.username = u.username
+        ";
+        //echo $sql;
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        while($data = mysqli_fetch_assoc($result)) {
+          echo $data['nom'];
+            echo '<br>';
+            
+        }
+
+    }
+}
+
+
+
+
 ?>

@@ -137,7 +137,7 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
                 </div>
                 <div class="right-pane">
                     <h3>Membres</h3>
-                    <p>Affichage des infos</p>
+                    <p><?php show_members()?></p>
                 </div>
             </div>
 

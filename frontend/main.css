@@ -363,3 +363,12 @@ input[type=text], input[type=password] {
 .submit-post:hover {
     opacity: 0.7;
 }
+
+.time-left {
+    font-size: small;
+    position: relative;
+    bottom: 2px;
+    left: 2px;
+    float: left;
+    color: #aaa;
+}

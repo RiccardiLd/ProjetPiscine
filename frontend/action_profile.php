@@ -19,4 +19,28 @@ else { echo "Base de données non trouvée."; }
 
 mysqli_close($db_handle); }
 
+
+function bio($var)
+{
+    /*UPDATE table
+SET nom_colonne_1 = 'nouvelle valeur'
+WHERE condition*/
+    $database='linkedoff';
+    $db_handle=mysqli_connect('localhost', 'root', 'root');       
+    $db_found=mysqli_select_db($db_handle,$database);
+
+    if($db_found) {            
+       $sql =  "UPDATE users SET summary = '".$var."' WHERE username = '".$_SESSION['myusername']."'";
+        echo $sql;
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        
+        
+    }
+    else { echo "Base de données non trouvée."; }
+
+    mysqli_close($db_handle);
+}
+
+
+
 ?>

@@ -105,8 +105,19 @@ require 'action_profile.php';
                     <p><?php echo myposts() ?></p>
                 </div>
                 <div class="right-pane">
-                    <h3>Statistiques</h3>
-                    <p>Affichage des stats</p>
+                    <h3>Réécrire sa bio</h3>
+                    <div class="search-container">
+                        <form method="post" class="search-form">
+                            <input type="text" placeholder="Réécrire.." tabindex="1" name="bio">
+                            <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/search-icon.png">  </button>
+                    
+                        </form>
+                        <?php 
+                    if(isset($_POST['bouton'])){
+                     bio($_POST['bio']);
+                    }
+                    ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -325,6 +325,8 @@ input[type=text], input[type=password] {
 }
 
 .post {
+    display: flex;
+    flex-direction: column;
     background-color: #e2e2e2;
     overflow: scroll;
     border: 2px solid #888;
@@ -337,4 +339,22 @@ input[type=text], input[type=password] {
 
 .page-title {
     text-align: center;
+}
+
+.post-bottom {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.submit-post {
+    border: none;
+    background-color: transparent;
+    margin-bottom: 10px;
+    width: auto;
+    height: auto;
+}
+
+.submit-post:hover {
+    opacity: 0.7;
 }

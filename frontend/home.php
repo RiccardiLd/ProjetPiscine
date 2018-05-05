@@ -148,7 +148,11 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
                             <img src="img/avatar.png" alt="postImg" class="profile-post">
                             <?php echo posts() ?>
                         </p>
-                        <p class="post-content"><?php echo posts() ?></p>
+                        <div class="post-bottom">
+                            <button onclick="" class="submit-post" name = "boutonComment"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
+                            <button onclick="" class="submit-post" name = "boutonLike"><img class="icon" alt="Go" src="img/menu/like.png"></button>
+                            <button onclick="" class="submit-post" name = "boutonShare"><img class="icon" alt="Go" src="img/menu/share.png"></button>
+                        </div>
                     </div>
                 </div>
                 <div class="right-pane">

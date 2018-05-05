@@ -54,7 +54,7 @@ FROM posts p, users u, users v, comments com WHERE (p.username = '".$_SESSION['m
                     print '" class="cancelbtn" value="annuler">Annuler</button>
                     <button type="submit" name="post-comment" class="postbtn">Commenter</button>
                     <button type="submit" formaction="/action_like.php" name="like" class="submit-post" id=""><img class="icon" alt="like" src="img/menu/like.png"></button>
-                    <button onclick="" name="share" class="submit-post" id=""><img class="icon" alt="share" src="img/menu/share.png"></button>
+                    <button type="submit" formaction="/action_share.php" name="share" class="submit-post" id=""><img class="icon" alt="share" src="img/menu/share.png"></button>
                 </div>
             </form>
 

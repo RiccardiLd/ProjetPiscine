@@ -10,9 +10,20 @@ function posts(){
     if($db_found) {            
         $sql = "SELECT u.first_name, u.last_name, p.text, p.timestamp, p.post_id
 FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.username = u.username) OR (p.username != '".$_SESSION['myusername']."' AND (p.privacy = 'public' OR (p.privacy = 'contacts' AND ('".$_SESSION['myusername']."' = (SELECT c.username_user1 FROM contacts c WHERE c.username_user2 = p.username AND c.connected = 1 LIMIT 1) OR ('".$_SESSION['myusername']."' = (SELECT c.username_user2 FROM contacts c WHERE c.username_user1 = p.username AND c.connected = 1 LIMIT 1)))) OR ('".$_SESSION['myusername']."' = (SELECT g.username FROM group_member g WHERE g.group_id = p.privacy LIMIT 1)))AND u.username = p.username) ORDER BY p.timestamp DESC";
-
+        
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        
+        $sql2 = "SELECT u.first_name, u.last_name, p.text, p.post_id, com.timestamp AS time, com.content
+FROM posts p, users u, comments com WHERE (p.post_id = com.post_id) AND (com.username_user = u.username) AND (p.username = '".$_SESSION['myusername']."') OR (p.username != '".$_SESSION['myusername']."' AND (p.privacy = 'public' OR (p.privacy = 'contacts' AND ('".$_SESSION['myusername']."' = (SELECT c.username_user1 FROM contacts c WHERE c.username_user2 = p.username AND c.connected = 1 LIMIT 1) OR ('".$_SESSION['myusername']."' = (SELECT c.username_user2 FROM contacts c WHERE c.username_user1 = p.username AND c.connected = 1 LIMIT 1)))) OR ('".$_SESSION['myusername']."' = (SELECT g.username FROM group_member g WHERE g.group_id = p.privacy LIMIT 1)))) ORDER BY p.timestamp DESC";
+        
 
+        $result2 = mysqli_query($db_handle, $sql2) or die(mysql_error());
+
+        while($data2 = mysqli_fetch_assoc($result2)) {
+            echo $data2['first_name'].' '.$data2['last_name'].' '.$data2['time'].' '.$data2['content'];
+        }
+        
+        
         while($data = mysqli_fetch_assoc($result)) {
         print '<h3 class="post-title">'.$data['first_name'].' '.$data['last_name'].'</h3>';
         print '<p class="post-content"></p>';

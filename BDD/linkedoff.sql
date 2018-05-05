@@ -235,10 +235,10 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
 -- ---
 
  INSERT INTO `users` (`username`,`email`,`password`,`first_name`,`last_name`,`profile_photo`,`summary`,`status`) VALUES
- ('ECE','jpsegado@inseec.com','segalol','Jean-Pierre','Segado','','','admin'),
+ ('ECE','jpsegado@inseec.com','mdpece123','Jean-Pierre','Segado','','','admin'),
  ('RiccardiLd','gianni.riccardi@edu.ece.fr','cykablyat','Gianni','Riccardi','','','admin'),
- ('JoVieira','theo.minier@edu.ece.fr','cykablyat2','Joel','Vieira','','','admin'),
- ('Reinim','joel.vieira@edu.ece.fr','cykablyat3','Théo','Minier','','','admin');
+ ('JoVieira','joel.vieira@edu.ece.fr','cykablyat2','Joel','Vieira','','','admin'),
+ ('Reinim','theo.minier@edu.ece.fr','cykablyat3','Théo','Minier','','','admin');
 
 -- INSERT INTO `posts` (`post_id`,`username`,`privacy`,`type`,`text`,`content`,`timestamp`,`id_shared_post`) VALUES
 -- ('','','','','','','','');
@@ -266,9 +266,9 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
 -- ('','','','','');
 
  INSERT INTO `skills` (`username`,`skill`,`skill_level`) VALUES
- ('Reinim','Procrastiner','Avancé'),
- ('RiccardiLd','Procrastiner','Avancé'),
- ('JoVieira','Procrastiner','Avancé');
+ ('Reinim','C++','Avancé'),
+ ('RiccardiLd','Java','Avancé'),
+ ('JoVieira','Web Design','Avancé');
 
 -- INSERT INTO `notifications` (`notif_id`,`parent_id`,`type`,`seen`,`user_create`,`user_receive`) VALUES
 -- ('','','','','','');

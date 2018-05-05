@@ -1,5 +1,4 @@
 <?php
-session_start();
     
 function jobs($val) {
         $database='linkedoff';

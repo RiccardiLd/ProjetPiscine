@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 function conv_names(){
     $database='linkedoff';

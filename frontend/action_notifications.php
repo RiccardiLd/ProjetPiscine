@@ -1,5 +1,4 @@
 <?php
-session_start();
 function notifications(){
     $database='linkedoff';
     $db_handle=mysqli_connect('localhost', 'root', 'root');       

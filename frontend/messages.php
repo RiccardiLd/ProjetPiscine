@@ -2,6 +2,7 @@
 session_start();
 require 'action_messages.php'; 
 $_SESSION['hisusername'] = $_SESSION['myusername'];
+$_SESSION['convId']=1;
 
 ?>
 
@@ -104,7 +105,7 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
                     <p><?php echo conv_names()?></p>
                 </div>
                 <div class="main-pane">
-
+                        <p><?php messages() ?></p>
                 </div>
                 <div class="right-pane">
                     <h3>Membres</h3>

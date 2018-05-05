@@ -1,6 +1,7 @@
 <?php
-require action_admin.php;
+require 'action_admin.php';
 ?>
+
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,19 +39,20 @@ require action_admin.php;
         
         <div class=global-wrapper>
             
-            <form id="regForm" class="reg-form" action="/action_signup.php" method="POST">
+            <form id="regForm" class="reg-form"  method="POST">
                 <h2 class="title">Supprimer quelqu'un</h2>
 
                 <section class="form-body">
                     <label for="reg-firstname">Username</label>
                     <input type="text" name="username" id="reg-firstname" class="reg-firstname" aria-required="true" tabindex="1" placeholder="" required>
                     
-                    <input tabindex="4" id="registration-submit" class="registration submit-button" type="submit" name="delete" value="Supprimer">
+                    <input class="submit" type="submit" name="delete" value="Supprimer">
                 </section>
             </form>
-            <?php if(isset($_POST['Supprimer'])){
-        delete($_POST['username']);
+          <?php  if(isset($_POST['delete'])){
+        delete_admin($_POST['username']);
     }?>
+            
         </div>
         
         

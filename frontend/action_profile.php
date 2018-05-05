@@ -46,7 +46,14 @@ function myinfos() {
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
     
         $data = mysqli_fetch_assoc($result);
-        echo $data['username'].'<br>'.'<br>'.$data['first_name'].' '.$data['last_name'].'<br>'.'<br>'.$data['email'].'<br>'.'<br>'.'Promo '.$data['graduation'].'<br>'.'<br>'.'<br>'.$data['summary'].'<br>';
+        echo $data['username'].'<br>'.'<br>'.$data['first_name'].' '.$data['last_name'].'<br>'.'<br>'.$data['email'].'<br>'.'<br>'.'Promo '.$data['graduation'].'<br>'.'<br>'.'<br>'.$data['summary'].'<br>'.'<br>'.'<br>';
+        
+        $sql = "SELECT concat (skill,' (', skill_level,')') AS sk FROM skills WHERE username = '".$_SESSION["myusername"]."'";
+
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+
+        while($data = mysqli_fetch_assoc($result)) {
+        echo $data['sk'].'<br>'; }
 }
 else { echo "Base de données non trouvée."; }
 

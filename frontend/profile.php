@@ -123,7 +123,6 @@ $_SESSION['convId']=1;
                             <input type="text" placeholder="Réécrire.." tabindex="1" name="bio">
                             <button type="submit" class="submit-search" name = "bouton"><img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
                         </form>
-                        <?php if(isset($_POST["bouton"])){bio($_POST["bio"]);} ?>
                     </div>
                     <p>Changer sa photo de profil</p>
                     <div class="search-container">
@@ -131,8 +130,40 @@ $_SESSION['convId']=1;
                             <input type="text" placeholder="Insérez ici l URL" tabindex="1" name="photo">
                             <button type="submit" class="submit-search" name = "bouton_photo"><img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
                         </form>
-                        <?php if(isset($_POST["bouton_photo"])){profilepic($_POST["photo"]);} ?>
-                    </div>';   
+                       
+                    </div> <form method="post" class="search-form">
+                            
+                            <button type="submit" class="submit-search" name = "bouton3">SKILLS<img class="icon" alt="Go" src="img/menu/go-button.png"></button>
+                            
+                            <select name="skills">
+
+                                <option value="java">Java</option>
+
+                                <option value="C++">C++</option>
+                                <option value="SQL">SQL</option>
+                                <option value="C">C</option>
+                                <option value="thermodynamique">Thermodynamique</option>
+
+
+
+                            </select>
+                            <select name="niveau">
+
+                                <option value="débutant">Débutant</option>
+
+                                <option value="intermédiaire">Intermédiaire</option>
+                                
+                                <option value="avancé">Avancé</option>
+
+
+                            </select>
+                        </form>
+                       '; 
+         if(isset($_POST["bouton_photo"])){profilepic($_POST["photo"]);} 
+                                             if(isset($_POST["bouton"])){bio($_POST["bio"]);} 
+                     if(isset($_POST["bouton3"]))
+                        {skills($_POST["skills"],$_POST["niveau"]);} 
+
     }
                         else
                         {

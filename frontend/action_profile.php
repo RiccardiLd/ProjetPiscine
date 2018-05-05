@@ -105,17 +105,7 @@ function friend_request()
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
        
-        $nameconv = $_SESSION["hisusername"]." ".$_SESSION["myusername"];
         
-        $sql = "INSERT INTO conversations VALUES ('', '".$nameconv."')";
-        
-        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
-        
-        //$sql = "INSERT INTO member VALUES ((SELECT con, '".$nameconv."')";
-        
-       // $result = mysqli_query($db_handle, $sql) or die(mysql_error());
-        
-
         
 }}
 function friend_request_accept()
@@ -132,6 +122,19 @@ function friend_request_accept()
        
          $sql = "INSERT INTO notifications (notif_id, parent_id, type, seen, timestamp, user_create, user_receive)
                                     VALUES ('', null, 'invite','0', NOW(), '".$_SESSION["hisusername"]."','".$_SESSION['myusername']."')";
+        $nameconv = $_SESSION["hisusername"]." ".$_SESSION["myusername"];
+        
+        $sql = "INSERT INTO conversations VALUES ('', '".$nameconv."')";
+        
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        
+        $sql = "INSERT INTO member VALUES ((SELECT conv_id FROM conversations WHERE 1 ORDER BY conv_id DESC LIMIT 1), '".$_SESSION["myusername"]."'";
+        
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        
+        $sql = "INSERT INTO member VALUES ((SELECT conv_id FROM conversations WHERE 1 ORDER BY conv_id DESC LIMIT 1), '".$_SESSION["hisusername"]."'";
+        
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
         

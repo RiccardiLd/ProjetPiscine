@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'action_messages.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -98,13 +99,13 @@ session_start();
             <div class="central-wrapper">
                 <div class="left-pane">
                     <h3>Conversations</h3>
-                    <p>Affichage des convs</p>
+                    <p><?php echo conv_names()?></p>
                 </div>
                 <div class="main-pane">
 
                 </div>
                 <div class="right-pane">
-                    <h3>Informations sur la conv</h3>
+                    <h3>Membres</h3>
                     <p>Affichage des infos</p>
                 </div>
             </div>

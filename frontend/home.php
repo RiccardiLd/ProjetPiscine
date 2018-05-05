@@ -145,7 +145,7 @@
                 </div>
                 <div class="right-pane">
                     <h3>Mes statistiques</h3>
-                    <p>J'ai <?php echo nb_con() ?> connexions(s)</p>
+                    <p>J'ai <?php echo nb_con() ?> connexion(s)</p>
                     <p>J'ai écrit <?php echo nb_posts() ?> publication(s)</p>
                     <p><?php echo skills() ?></p>
                 </div>

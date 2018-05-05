@@ -11,8 +11,9 @@ FROM posts p, users u WHERE p.username = '".$_SESSION['hisusername']."' AND p.us
     $result = mysqli_query($db_handle, $sql) or die(mysql_error());
     
     while($data = mysqli_fetch_assoc($result)) {
-        echo ' -   '.$data['first_name'].' '.$data['last_name'].'<br>';
-        echo $data['text'].'<br>'.'<br>';
+        print '<h3 class="post-title">'.$data['first_name'].' '.$data['last_name'].'</h3>';
+        print '<p class="post-content"></p>';
+        print '<p class="post-content">'.$data['text'].'</p>';
 }}
 else { echo "Base de données non trouvée."; }
 

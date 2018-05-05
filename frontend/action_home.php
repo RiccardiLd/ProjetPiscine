@@ -96,11 +96,27 @@ function post($var,$group)
     if($db_found) {            
        $sql =  "INSERT INTO posts(post_id, username, privacy, type, text, content, timestamp, id_shared_post) VALUES('','".$_SESSION["myusername"]."','".$group."',null,'".$var."',null,NOW(),null)";
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
-
-        while($data = mysqli_fetch_assoc($result)) {
-        echo ' -   '.$data['nom'].'<br>';
-    }
-
+        
+        if($group != 'public') {
+        $sql =  "SELECT post_id, username FROM posts WHERE 1 ORDER BY timestamp DESC LIMIT 1";
+        $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+        $data = mysqli_fetch_assoc($result);
+            
+            if($group == 'contacts') {
+                $sql = "SELECT username FROM users WHERE username IN (SELECT 
+CASE WHEN username_user1 = '".$_SESSION['myusername']."' THEN username_user2 
+	 WHEN username_user2 = '".$_SESSION['myusername']."' THEN username_user1 
+     ELSE NULL 
+     END AS NewField 
+FROM contacts WHERE (username_user2 = '".$_SESSION['myusername']."' OR username_user1 = '".$_SESSION['myusername']."') AND connected = 1)";
+                $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+                
+                while($data2 = mysqli_fetch_assoc($result)) {
+                    $sql =  "INSERT INTO notifications(notif_id, parent_id, type, seen, timestamp, user_create, user_receive) VALUES('','".$data['post_id']."','post','',NOW(),'".$data['username']."','".$data2['username']."')";
+                    $result = mysqli_query($db_handle, $sql) or die(mysql_error());
+                }
+            }
+        }
     }
     else { echo "Base de données non trouvée."; }
 

@@ -94,7 +94,7 @@ function post($var)
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-       $sql =  "INSERT INTO posts(post_id, username, privacy, type, text, content, timestamp, id_shared_post) VALUES('','".$_SESSION["myusername"]."','public',null,'".$var."','null',NOW(),null)";
+       $sql =  "INSERT INTO posts(post_id, username, privacy, type, text, content, timestamp, id_shared_post) VALUES('','".$_SESSION["myusername"]."','public',null,'".$var."',null,NOW(),null)";
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
 
         while($data = mysqli_fetch_assoc($result)) {

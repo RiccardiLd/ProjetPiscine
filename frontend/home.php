@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
     session_start();
     require 'action_home.php';
     require 'action_mynetwork.php';

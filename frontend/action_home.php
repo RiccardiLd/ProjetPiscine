@@ -20,8 +20,7 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
         print '<div class="post-bottom">
                             <button onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='block'";
                             print '" name="comment" class="submit-post" id=""><img class="icon" alt="Go" src="img/menu/list-with-dots.png"></button>
-                            <button name="like" class="submit-post" id=""><img class="icon" alt="like" src="img/menu/like.png">'.$data['post_id'].'</button>
-                            <button onclick="" name="share" class="submit-post" id=""><img class="icon" alt="share" src="img/menu/share.png"></button>
+                            
                </div>';
         print '<span class="time-left">'.$data['timestamp'].'</span>';
         print '<div id="'.$data['post_id'].'" class="modal">
@@ -30,8 +29,11 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
                 <div class="imgcontainer">
                     <span onclick="'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
                     print '" class="close" title="Close Modal">&times;</span>
-                </div>
-                
+                </div>';
+                while($data = mysqli_fetch_assoc($result)) {
+                    print '<p class="post-content"></p>';
+                }
+                print '
                 <div class="container">
                     <label for="uname"><b>Votre commentaire :</b></label>
                     <input type="text" placeholder="Entrez ici votre commentaire" name="uname" required>
@@ -40,7 +42,9 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" "'; echo "document.getElementById('".$data['post_id']."').style.display='none'";
                     print '" class="cancelbtn" value="annuler">Annuler</button>
-                    <button type="submit" name="post-comment" class="postbtn">Commenter</button> 
+                    <button type="submit" name="post-comment" class="postbtn">Commenter</button>
+                    <button name="like" class="submit-post" id=""><img class="icon" alt="like" src="img/menu/like.png"></button>
+                    <button onclick="" name="share" class="submit-post" id=""><img class="icon" alt="share" src="img/menu/share.png"></button>
                 </div>
             </form>
         </div>';

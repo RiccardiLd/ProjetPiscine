@@ -2,8 +2,6 @@
 session_start();
 require 'action_messages.php'; 
 $_SESSION['hisusername'] = $_SESSION['myusername'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -103,6 +101,7 @@ $_SESSION['hisusername'] = $_SESSION['myusername'];
                 <div class="left-pane">
                     <h3>Conversations</h3>
                     <p><?php echo conv_names()?></p>
+                    
                 </div>
                 <div class="main-pane">
                         <p><?php messages() ?></p>

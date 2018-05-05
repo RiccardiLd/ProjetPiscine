@@ -136,7 +136,7 @@ $_SESSION['convId']=1;
     }
                         else
                         {
-                            if(!ifalreadyfriend())
+                            if(!ifalreadyfriend()&&!iffriendasked())
                             {
                                 echo
                            ' <form method="post" class="search-form">
@@ -147,7 +147,19 @@ $_SESSION['convId']=1;
                     friend_request();
                             }
                             
-    }
+                            }
+                            if(!ifalreadyfriend()&&iffriendasked())
+                            {
+                                echo
+                           ' <form method="post" class="search-form">
+                            <button type="submit" class="submit-search" name = "bouton">Accepter à entrer dans son réseau<img class="icon" alt="Search" src="img/menu/go-button.png">  </button>
+                        </form>';
+                            
+            if(isset($_POST['bouton'])){
+                    friend_request_accept();
+                            }
+                            
+                            }
                         }
                     
                     

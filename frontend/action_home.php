@@ -8,7 +8,7 @@ function posts(){
     $db_found=mysqli_select_db($db_handle,$database);
 
     if($db_found) {            
-        $sql = "SELECT u.first_name, u.last_name, p.text, p.timestamp
+        $sql = "SELECT u.first_name, u.last_name, p.text, p.timestamp, p.post_id
 FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.username = u.username) OR (p.username != '".$_SESSION['myusername']."' AND (p.privacy = 'public' OR (p.privacy = 'contacts' AND ('".$_SESSION['myusername']."' = (SELECT c.username_user1 FROM contacts c WHERE c.username_user2 = p.username AND c.connected = 1 LIMIT 1) OR ('".$_SESSION['myusername']."' = (SELECT c.username_user2 FROM contacts c WHERE c.username_user1 = p.username AND c.connected = 1 LIMIT 1)))) OR ('".$_SESSION['myusername']."' = (SELECT g.username FROM group_member g WHERE g.group_id = p.privacy LIMIT 1)))AND u.username = p.username) ORDER BY p.timestamp DESC";
 
         $result = mysqli_query($db_handle, $sql) or die(mysql_error());
@@ -18,9 +18,9 @@ FROM posts p, users u WHERE (p.username = '".$_SESSION['myusername']."' AND p.us
         print '<p class="post-content">'.$data['timestamp'].'</p>';
         print '<p class="post-content">'.$data['text'].'</p>';
         print '<div class="post-bottom">
-                            <button onclick="" id="comment" class="submit-post" name="boutonComment"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
-                            <button onclick="" id="like" class="submit-post" name="boutonLike"><img class="icon" alt="Go" src="img/menu/like.png"></button>
-                            <button onclick="" id="share" class="submit-post" name="boutonShare"><img class="icon" alt="Go" src="img/menu/share.png"></button>
+                            <button onclick="" id="comment" class="submit-post" name="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/coment.png"></button>
+                            <button onclick="" id="like" class="submit-post" name="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/like.png"></button>
+                            <button onclick="" id="share" class="submit-post" name="'.$data['post_id'].'"><img class="icon" alt="Go" src="img/menu/share.png"></button>
                </div>';
     }
 

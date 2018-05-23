@@ -241,12 +241,12 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
  ('Reinim','theo.minier@edu.ece.fr','cykablyat3','Théo','Minier','','','admin');
 
  INSERT INTO `posts` (`username`,`privacy`,`type`,`text`,`content`,`timestamp`,`id_shared_post`) VALUES
- ('ECE','public','emploi','Offre de CDD - AXA','','NOW()',''),
- ('ECE','public','emploi','Offre de stage - Société Générale','','NOW()',''),
- ('ECE','public','emploi','Offre de CDD - Google','','NOW()',''),
- ('ECE','public','emploi','Offre de stage - Microsoft','','NOW()',''),
- ('ECE','public','emploi','Offre de stage - Apple','','NOW()',''),
- ('ECE','public','emploi','Offre de stage - ECE','','NOW()','');
+ ('ECE','public','emploi','Offre de CDD - AXA','','2018-05-05 12:23:33',''),
+ ('ECE','public','emploi','Offre de stage - Société Générale','','2018-05-05 12:25:24',''),
+ ('ECE','public','emploi','Offre de CDD - Google','','2018-05-05 12:29:42',''),
+ ('ECE','public','emploi','Offre de stage - Microsoft','','2018-05-05 12:33:34',''),
+ ('ECE','public','emploi','Offre de stage - Apple','','2018-05-05 12:55:46',''),
+ ('ECE','public','emploi','Offre de stage - ECE','','2018-05-05 13:02:32','');
 
  INSERT INTO `contacts` (`username_user1`,`username_user2`,`type`,`connected`,`timestamp`) VALUES
  ('ECE','RiccardiLd','','1','2018-04-20 13:23:44'),

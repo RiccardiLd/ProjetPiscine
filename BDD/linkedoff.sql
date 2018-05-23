@@ -235,10 +235,10 @@ ALTER TABLE `group_member` ADD FOREIGN KEY (username) REFERENCES `users` (`usern
 -- ---
 
  INSERT INTO `users` (`username`,`email`,`password`,`first_name`,`last_name`,`profile_photo`,`summary`,`status`) VALUES
- ('ECE','jpsegado@inseec.com','mdpece123','Jean-Pierre','Segado','','','admin'),
- ('RiccardiLd','gianni.riccardi@edu.ece.fr','cykablyat','Gianni','Riccardi','','','admin'),
- ('JoVieira','joel.vieira@edu.ece.fr','cykablyat2','Joel','Vieira','','','admin'),
- ('Reinim','theo.minier@edu.ece.fr','cykablyat3','Théo','Minier','','','admin');
+ ('ECE','jpsegado@inseec.com','mdpece123','Jean-Pierre','Segado','https://yt3.ggpht.com/a-/AJLlDp2x-fgmhrERh8qNaRtLo86xQs09uviBihXZzg=s900-mo-c-c0xffffffff-rj-k-no','','admin'),
+ ('RiccardiLd','gianni.riccardi@edu.ece.fr','cykablyat','Gianni','Riccardi','https://i0.wp.com/nerdgeekfeelings.com/wp-content/uploads/2014/12/nem-os-cavaleiros-do-zodiaco-escapam-da-zoeira-aldebaran-de-touro-ataca-de-hue-hue-no-meme-1409768309835_956x500.png','','admin'),
+ ('JoVieira','joel.vieira@edu.ece.fr','cykablyat2','Joel','Vieira','https://i.imgur.com/jVGsvvF.jpg','','admin'),
+ ('Reinim','theo.minier@edu.ece.fr','cykablyat3','Théo','Minier','http://a397.idata.over-blog.com/300x426/4/23/42/31/67/jesus.jpg','','admin');
 
  INSERT INTO `posts` (`username`,`privacy`,`type`,`text`,`content`,`timestamp`,`id_shared_post`) VALUES
  ('ECE','public','emploi','Offre de CDD - AXA','','2018-05-05 12:23:33',''),
